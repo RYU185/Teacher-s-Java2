@@ -5,7 +5,7 @@ public class Method2 {
     }
 
     public static boolean isOdd(int number) {
-        if(number%2==1){ //홀수의 경우
+        if (number % 2 == 1){ //홀수의 경우
             return true;
         }else { // 짝수의 경우, else는 if옆의 조건이 false인 경우 실행됨
             return false;
