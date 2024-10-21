@@ -9,8 +9,8 @@ public class Example6 {
 
         // 메서드 사용
         // 아래 코드가 동작하도록 메서드를 정의하시오
-        //System.out.println(areEqual("test", "test")); // true 출력
-        //System.out.println(areEqual("hello", "world")); // false 출력
+        System.out.println(areEqual("test", "test")); // true 출력
+        System.out.println(areEqual("hello", "world")); // false 출력
     }
 
 }
