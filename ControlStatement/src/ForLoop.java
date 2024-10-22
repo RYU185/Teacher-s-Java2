@@ -21,6 +21,24 @@ public class ForLoop {
             System.out.print(i + "," + j + " ");
         }
         System.out.println("끝");
+
+        // 무한루프 : 조건식이 없거나 혹은 조건식이 거짓이 될 수 없는 경우,
+        // 루프는 무한히 계속 된다!
+        int count = 0;
+        for(int i=0; ; i++) { // 조건식이 없음
+            System.out.println(i);
+            count = i;
+            if (count > 1000000) {
+                break;
+            }
+        }
+//        for( ; ; ){
+//            // 무한루프
+//        }
+//        for(int i=0; i>=0; i++) { // 조건식이 거짓이 될 수 없음
+//            System.out.println(i);
+//        }
+        //System.out.println("끝");
     }
 }
 
