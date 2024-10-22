@@ -13,9 +13,24 @@ public class Example7 {
 
         // 메서드 사용
         // 아래 코드가 동작하도록 메서드를 정의하시오
-//        System.out.println(getMax(5, 10)); // 큰 수는 10
-//        System.out.println(getMax(23, 22)); // 큰 수는 23
-//        System.out.println(getMax(50, 50)); // 두 수는 같음"
+        System.out.println(getMax(5, 10)); // 큰 수는 10
+        System.out.println(getMax(23, 22)); // 큰 수는 23
+        System.out.println(getMax(50, 50)); // 두 수는 같음"
     }
-
+    public static String getMax(int a, int b) {
+        if (a > b) {
+            return("큰 수는 " + a);
+        } else if (b > a){
+            return("큰 수는 " + b);
+        } else {
+            return("두 수는 같음");
+        }
+    }
+//    public static int getMax(int a, int b) {
+//        if (a >= b) {
+//            return a;
+//        }else {
+//            return b;
+//        }
+//    }
 }
