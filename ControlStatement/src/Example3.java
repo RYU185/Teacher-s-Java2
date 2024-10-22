@@ -12,9 +12,9 @@ public class Example3 {
 
         // 메서드 사용
         // 아래 코드가 동작하도록 메서드를 정의하시오
-        System.out.println(checkPositiveOrNegative(10)); // 양수 출력
-        System.out.println(checkPositiveOrNegative(-5)); // 음수 출력
-        System.out.println(checkPositiveOrNegative(0));  // 0 출력
+//        System.out.println(checkPositiveOrNegative(10)); // 양수 출력
+//        System.out.println(checkPositiveOrNegative(-5)); // 음수 출력
+//        System.out.println(checkPositiveOrNegative(0));  // 0 출력
     }
 
 }
