@@ -8,6 +8,7 @@ public class Example13 {
         // 91=[, 92=\, 93=], 94=^, 95=_, 96=`
 //        System.out.println(findCharCount('A','Z')); // 26
 //        System.out.println(findCharCount('h','q')); // 10
+//        System.out.println(findCharCount('W','p')); // 20
     }
 
 }
