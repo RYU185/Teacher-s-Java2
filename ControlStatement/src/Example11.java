@@ -9,5 +9,20 @@ public class Example11 {
         System.out.println(countEvenNumbers(3,4)); // 0
         System.out.println(countEvenNumbers(1,200)); // 99
     }
-    
+    public static int countEvenNumbers(int a, int b) {
+        int count = 0;
+        for (int i=a; i<b; i++) {
+            if (i % 2 == 0) {
+                count = count + 1;
+            }
+        }
+        return count;
+    }
 }
+
+
+
+
+
+
+
