@@ -15,6 +15,20 @@ public class Array4 {
             System.out.println(data);
             // data는 반복문안에서 순서대로 3, 4, 5, 6, 7을 가짐
         }
+        System.out.println();
+        // 예제
+        String[] colors = {"black", "white", "blue", "red", "green"};
+        for(int i=0; i< colors.length; i++) {
+            System.out.println(colors[i]);
+        }
+        System.out.println();
+        int count = 0;
+        for(String data : colors) {
+            System.out.println(count + " : " + data);
+            count = count + 1;
+        }
+        // 간단버전의 For문(= for-each문)은 인덱스값을 제공하지 않기 때문에
+        // 필요하면 직접 추가해야함.
     }
 }
 
