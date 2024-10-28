@@ -7,4 +7,13 @@ public class Example4 {
         System.out.println(findColor(colors, "green")); // 3
         System.out.println(findColor(colors, "yellow")); // -1
     }
+    public static int findColor(String[] colors, String str) {
+        int count = 0;
+        for (int i=0; i<colors.length; i++) {
+            if (colors[i].equals(str)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
