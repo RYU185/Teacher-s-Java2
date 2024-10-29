@@ -16,6 +16,19 @@ public class MyClass {
         System.out.println(steve.sumScore());
         System.out.println(tom.sumScore());
         System.out.println(sam.sumScore());
+
+        User kim = new User("Kim", "kim@gmail.com"
+                , "1234");
+        System.out.println(kim.password);
+        kim.setPassword("abcd");
+        System.out.println(kim.password);
+
+        Product book1 = new Product("A001", "여행"
+                , 10000, 100);
+        System.out.println(book1.price + " " + book1.stock);
+        book1.setPrice(11000);
+        book1.setStock(90);
+        System.out.println(book1.price + " " + book1.stock);
     }
 }
 
