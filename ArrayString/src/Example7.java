@@ -12,4 +12,12 @@ public class Example7 {
         String str = scanner.nextLine();
         System.out.println(checkMember(members, str));
     }
+    public static String checkMember(String[] members, String str) {
+        for (int i=0; i< members.length; i++) {
+            if (members[i].equalsIgnoreCase(str) ) {
+                return members[i] + "님 환영합니다";
+            }
+        }
+        return "회원가입해주세요";
+    }
 }
