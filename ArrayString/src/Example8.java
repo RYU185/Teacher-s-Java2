@@ -10,7 +10,20 @@ public class Example8 {
         System.out.println(reverseString(str));
     }
     public static String reverseString(String str) {
-
-        return "";
+        char[] chArray = str.toCharArray();
+        char[] newArray = new char[chArray.length];
+        int j = chArray.length - 1;
+        for (int i=0; i<chArray.length; i++) {
+            newArray[j] = chArray[i];
+            j = j - 1;
+        }
+        return String.valueOf(newArray);
     }
 }
+
+
+
+
+
+
+
