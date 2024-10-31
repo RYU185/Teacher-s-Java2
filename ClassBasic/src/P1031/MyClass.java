@@ -11,5 +11,16 @@ public class MyClass {
         //System.out.println(Arrays.toString(strings));
         // #2. import없이 풀네임을 사용할 수도 있음
         System.out.println(java.util.Arrays.toString(strings));
+        ExternalClass ec = new ExternalClass();
+        ExternalClass2 ec2 = new ExternalClass2();
     }
 }
+
+class ExternalClass {
+    // 외부클래스를 같은 파일내에 정의한 경우,
+    // 외부클래스는 public을 사용할 수 없음!!
+}
+
+
+
+
