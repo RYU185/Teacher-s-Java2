@@ -3,11 +3,17 @@ package sec02_staticmodifier.EX03_StaticMethod;
 /*인스턴스 메서드와 정적 메서드*/
 
 class A {
+	int a;
+	static int b;
 	void abc() { //인스턴스 메서드
-		System.out.println("instance 메서드");
+		a = 10;
+		b = 20;
+		System.out.println("instance 메서드" + a + " " + b);
 	}
 	static void bcd() { //정적메서드
-		System.out.println("static 메서드");
+		//a = 10;
+		b = 20;
+		System.out.println("static 메서드" + b);
 	}
 }
 public class StaticMethod {
