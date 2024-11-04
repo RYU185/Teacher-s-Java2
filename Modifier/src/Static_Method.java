@@ -22,6 +22,8 @@ class A {
         System.out.println(a + " " + b);
     }
     static void bcd() { // 정적(static) 메서드
+        // 중요! 정적메서드에서는 인스턴스필드 또는 인스턴스 메서드를 참조X(사용X)
+        //a = 10;
         b = 20;
         System.out.println(b);
     }
