@@ -6,7 +6,10 @@ public class Static_Method {
 
         // 정적 메서드 사용
         // #1
-        A.bcd();
+        A.bcd(); // 20
+        // #2
+        A a2 = new A();
+        a2.bcd(); // 20 인스턴스메서드처럼 사용가능 (권장X)
     }
 }
 
