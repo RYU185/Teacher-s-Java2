@@ -15,6 +15,11 @@ public class Static_1 {
         A.n = 10; // 정적필드는 오직 한개만 존재함
         System.out.println(a1.n); // 10
         System.out.println(a2.n); // 10
+
+        a1.n = 7;
+        a2.n = 8;
+        System.out.println(a1.n); // 8
+        System.out.println(a2.n); // 8
     }
 }
 
