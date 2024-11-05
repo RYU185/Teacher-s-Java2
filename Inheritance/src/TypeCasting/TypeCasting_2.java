@@ -19,6 +19,21 @@ public class TypeCasting_2 {
         }else {
             System.out.println("value1은 D로 다운캐스팅 불가!!");
         }
+
+        if (value2 instanceof D) {
+            D d = (D)value2;
+            System.out.println("value2를 D로 다운캐스팅");
+        }else {
+            System.out.println("value2는 D로 다운캐스팅 불가!!");
+        }
+
+        // 객체의 실제 타입을 직접적으로 알 수 있는 방법??
+        System.out.println(value1.getClass().getName()); // TypeCasting.C
+        System.out.println(value2.getClass().getName()); // TypeCasting.D
+
+        // instnaceof와 getClass.getName의 차이점
+        // instanceof는 상속관계를 포함하고 있음
+        // getClass.getName은 상속관계를 무시하고 정확히 동일한 클래스만을 리턴
     }
 }
 
