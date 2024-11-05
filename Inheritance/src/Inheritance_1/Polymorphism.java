@@ -24,6 +24,11 @@ public class Polymorphism {
         // C c2 = new B(); // B는 C이다(X)
         C c3 = new C();
         // C c4 = new D(); // D는 C이다(X)
+        // D
+        // D d1 = new A(); // A는 D이다(X)
+        // D d2 = new B(); // B는 D이다(X)
+        // D d3 = new C(); // C는 D이다(X)
+        D d4 = new D();
     }
 }
 
