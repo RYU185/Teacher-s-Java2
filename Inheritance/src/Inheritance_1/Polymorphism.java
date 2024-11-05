@@ -38,6 +38,8 @@ public class Polymorphism {
         B bc = new C(); // C->B 업캐스팅
         B bb = new B();
         A a = (A)bb; // B->A 업캐스팅. 업캐스팅의 다른 방법
+        
+
     }
 }
 
