@@ -31,6 +31,14 @@ public class Inheritance_1 {
         s.eat();
         s.sleep();
         s.goToSchool(); // 학생만의 메서드
+        // #3. Worker 객체생성
+        Worker w = new Worker();
+        w.name = "Sam";
+        w.age = 45;
+        w.workerID = 128; // Worker만의 필드
+        w.eat();
+        w.sleep();
+        w.goToWork(); // Worker만의 메서드
     }
 }
 
