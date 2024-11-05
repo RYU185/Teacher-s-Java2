@@ -32,6 +32,12 @@ public class Polymorphism {
         // D d2 = new B(); // B는 D이다(X)
         // D d3 = new C(); // C는 D이다(X)
         D d4 = new D();
+
+        // 타입캐스팅
+        A ac = new C(); // C->A 업캐스팅
+        B bc = new C(); // C->B 업캐스팅
+        B bb = new B();
+        A a = (A)bb; // B->A 업캐스팅. 업캐스팅의 다른 방법
     }
 }
 
