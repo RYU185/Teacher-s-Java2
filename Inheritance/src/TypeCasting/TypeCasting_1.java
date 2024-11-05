@@ -15,6 +15,24 @@ class B extends A {
 
 public class TypeCasting_1 {
     public static void main(String[] args) {
-
+        // #1. A타입
+        A value1 = new A();
+        System.out.println(value1.a); // 3
+        value1.methodA(); // A 클래스
+        
+        // #2. B타입
+        B value2 = new B();
+        System.out.println(value2.a); // 3
+        System.out.println(value2.b); // 4
+        value2.methodA(); // A 클래스
+        value2.methodB(); // B 클래스
     }
 }
+
+
+
+
+
+
+
+
