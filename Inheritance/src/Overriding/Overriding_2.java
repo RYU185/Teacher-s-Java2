@@ -7,9 +7,14 @@ class Animal {
 }
 // 자식클래스 새, 고양이, 개
 class Bird extends Animal {
+    @Override // 어노테이션
     void cry() {
-        System.out.println("짹짹");
+        super.cry(); // ...
+        //System.out.println("짹짹");
     }
+    // 어노테이션은 코드에 추가적인 정보를 제공하기 위한 메타데이터
+    // 메타데이터는 주로 코드의 의미를 명확하게 하고 컴파일러에게 지시를 내리거나
+    // 특정 동작을 수행할 수 있도록 명령하는 코드
 }
 class Cat extends Animal {
     void cry() {
