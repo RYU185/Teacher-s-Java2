@@ -40,6 +40,10 @@ public class Overriding_2 {
         animal2.cry();
         animal3.cry();
         System.out.println();
+
+        // 배열생성
+        // 부모클래스로 배열의 타입을 정의하면 자식클래스들 모두를 배열화할 수 있음
+        Animal[] animals = {animal, bird, cat, dog, animal1, animal2};
     }
 }
 
