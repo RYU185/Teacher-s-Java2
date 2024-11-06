@@ -24,6 +24,13 @@ class Dog extends Animal {
 
 public class Overriding_2 {
     public static void main(String[] args) {
-
+        Animal animal = new Animal();
+        Bird bird = new Bird();
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        animal.cry();
+        bird.cry();
+        cat.cry();
+        dog.cry();
     }
 }
