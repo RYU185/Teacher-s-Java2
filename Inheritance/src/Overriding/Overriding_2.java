@@ -32,5 +32,20 @@ public class Overriding_2 {
         bird.cry();
         cat.cry();
         dog.cry();
+        System.out.println();
+        Animal animal1 = new Bird(); // 업캐스팅
+        Animal animal2 = new Cat(); // 업캐스팅
+        Animal animal3 = new Dog(); // 업캐스팅
+        animal1.cry();
+        animal2.cry();
+        animal3.cry();
+        System.out.println();
     }
 }
+
+
+
+
+
+
+
