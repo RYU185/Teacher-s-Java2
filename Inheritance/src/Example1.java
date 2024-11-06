@@ -60,6 +60,14 @@ class Student {
     public void setScores(double[] scores) {
         this.scores = scores;
     }
+
+    public double calAverage() {
+        double sum = 0;
+        for (int i=0; i<this.scores.length; i++) {
+            sum = sum + this.scores[i];
+        }
+        return sum / this.scores.length;
+    }
 }
 
 public class Example1 {
@@ -85,6 +93,6 @@ public class Example1 {
         s2.setScores(scores2);
         System.out.println(Arrays.toString(s2.getScores()));
         // 평균
-        System.out.println(s2.calAverage()); // 
+        System.out.println(s2.calAverage()); //
     }
 }
