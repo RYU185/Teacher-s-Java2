@@ -74,6 +74,8 @@ public class Example1 {
         System.out.println(s1.getName()); // Steve
         System.out.println(s1.getGrade()); // 1
         System.out.println(Arrays.toString(s1.getScores()));
+        // 평균
+        System.out.println(s1.calAverage()); //
 
         Student s2 = new Student("230211", "Tom", 2);
         System.out.println(s2.getStudentId()); // 230211
@@ -82,5 +84,7 @@ public class Example1 {
         double[] scores2 = {70, 85, 60};
         s2.setScores(scores2);
         System.out.println(Arrays.toString(s2.getScores()));
+        // 평균
+        System.out.println(s2.calAverage()); // 
     }
 }
