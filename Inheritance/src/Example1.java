@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 학생의 정보와 성적을 관리하는 Student 클래스를 설계하세요.
 요구사항:
@@ -71,10 +73,14 @@ public class Example1 {
         System.out.println(s1.getStudentId()); // 240101
         System.out.println(s1.getName()); // Steve
         System.out.println(s1.getGrade()); // 1
+        System.out.println(Arrays.toString(s1.getScores()));
 
         Student s2 = new Student("230211", "Tom", 2);
         System.out.println(s2.getStudentId()); // 230211
         System.out.println(s2.getName()); // Tom
         System.out.println(s2.getGrade()); // 2
+        double[] scores2 = {70, 85, 60};
+        s2.setScores(scores2);
+        System.out.println(Arrays.toString(s2.getScores()));
     }
 }
