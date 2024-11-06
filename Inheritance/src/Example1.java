@@ -13,14 +13,18 @@ class Student {
     private String studentId;
     private String name;
     private int grade;
+    private double[] scores; // 점수의 배열 {국어, 영어, 수학}
 
     public Student() {
+        // 국,영,수 3개의 데이터를 가지는 배열을 생성(=인스턴스화)
+        this.scores = new double[3];
     }
 
     public Student(String studentId, String name, int grade) {
         this.studentId = studentId;
         this.name = name;
         this.grade = grade;
+        this.scores = new double[3];
     }
 
     public String getStudentId() {
@@ -46,6 +50,14 @@ class Student {
     public void setGrade(int grade) {
         this.grade = grade;
     }
+
+    public double[] getScores() {
+        return scores;
+    }
+
+    public void setScores(double[] scores) {
+        this.scores = scores;
+    }
 }
 
 public class Example1 {
@@ -54,6 +66,8 @@ public class Example1 {
         s1.setStudentId("240101");
         s1.setName("Steve");
         s1.setGrade(1);
+        double[] scores1 = {80, 90, 100};
+        s1.setScores(scores1);
         System.out.println(s1.getStudentId()); // 240101
         System.out.println(s1.getName()); // Steve
         System.out.println(s1.getGrade()); // 1
