@@ -21,6 +21,24 @@ class BB extends AA {
 // 오버라이딩과 오버로딩의 비교
 public class Overriding_3 {
     public static void main(String[] args) {
-
+        AA value1 = new AA();
+        value1.print1(); //
+        value1.print2(); //
+        BB value2 = new BB();
+        value2.print1(); //
+        value2.print2(); //
+        value2.print2(3); //
+        AA value3 = new BB();
+        value3.print1(); //
+        value3.print2(); //
     }
 }
+
+
+
+
+
+
+
+
+
