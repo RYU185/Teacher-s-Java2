@@ -33,5 +33,66 @@ public class Example2 {
 }
 
 class Album {
+    private String title;
+    private int releaseYear;
+    private String[] tracks = new String[5];
 
+    public Album() {
+        //this.tracks = new String[5];
+    }
+
+    public Album(String title, int releaseYear, String[] tracks) {
+        this.title = title;
+        this.releaseYear = releaseYear;
+        this.tracks = tracks;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+    public void setReleaseYear(int releaseYear) {
+        this.releaseYear = releaseYear;
+    }
+
+    public String[] getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(String[] tracks) {
+        this.tracks = tracks;
+    }
+
+    @Override
+    public String toString() {
+        return "앨범제목:" + this.title + ", 발매연도:" + this.releaseYear;
+    }
+
+    public void addTracks(String track) {
+        for (int i=0; i<this.tracks.length; i++) {
+            if (this.tracks[i] == null) { // 비었으면
+                this.tracks[i] = track; // 매개변수로 받은 곡제목을 저장
+                return;
+            }
+        }
+        System.out.println("더 이상 추가할 수가 없어요: " + track);
+    }
 }
+
+
+
+
+
+
+
+
+
+
