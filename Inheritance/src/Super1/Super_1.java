@@ -6,6 +6,7 @@ class A {
     }
 }
 class B extends A {
+    @Override
     void abc() {
         System.out.println("B클래스 abc");
     }
@@ -16,6 +17,18 @@ class B extends A {
 
 public class Super_1 {
     public static void main(String[] args) {
-
+        B value1 = new B();
+        value1.abc();
+        value1.bcd();
+        A value2 = (A)value1; //업캐스팅
+        value2.abc();
+        // value2.bcd();
+        // 에러.. A를 바인딩(참조)하고 있으므로 B영역에 있는
+        // bcd 메서드는 호출이 불가능하다
     }
 }
+
+
+
+
+
