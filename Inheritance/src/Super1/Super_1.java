@@ -11,7 +11,9 @@ class B extends A {
         System.out.println("B클래스 abc");
     }
     void bcd() {
-        System.out.println("B클래스 bcd");
+        //System.out.println("B클래스 bcd");
+        abc(); // this.abc() 와 동일함
+        super.abc(); // super는 부모의 인스턴스를 의미함
     }
 }
 
