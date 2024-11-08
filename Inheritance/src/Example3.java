@@ -20,6 +20,8 @@ public class Example3 {
         a2.removeTracks("BBB");
         System.out.println(a2.getTracks().size());
         System.out.println(a2.getTracks());
+
+        a2.removeTracks("FFF");
     }
 }
 // 배열대신 컬렉션중에 하나인 ArrayList를 사용하는 예제
