@@ -9,9 +9,13 @@ public class Example3 {
         a2.addTracks("AAA");
         a2.addTracks("BBB");
         a2.addTracks("CCC");
+
         List<String> temp = a2.getTracks();
         System.out.println(temp.size()); // List의 length는 size()로 확인
+        //System.out.println(a2.getTracks().size()); // 위 두줄의 간단버전(동일함)
+
         System.out.println(temp); // List는 바로 출력 가능
+        //System.out.println(a2.getTracks()); // 위 코드와 동일함
     }
 }
 // 배열대신 컬렉션중에 하나인 ArrayList를 사용하는 예제
