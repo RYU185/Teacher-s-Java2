@@ -27,6 +27,19 @@ class B {
 }
 
 public class Final_1 {
+    public static void main(String[] args) {
+        A1 a1 = new A1();
+        A2 a2 = new A2();
+        A3 a3 = new A3();
+        a1.a = 10;
+        //a1.b = 10; // final필드는 변경 불가능
+        a2.a = 100;
+        //a2.b = 100; // final필드는 변경 불가능
+        System.out.println(a1.a); // 10
+        System.out.println(a1.b); // 5
+        System.out.println(a2.a); // 100
+        System.out.println(a2.b); // 5
+    }
 }
 
 
