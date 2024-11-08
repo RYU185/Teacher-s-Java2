@@ -16,6 +16,10 @@ public class Example3 {
 
         System.out.println(temp); // List는 바로 출력 가능
         //System.out.println(a2.getTracks()); // 위 코드와 동일함
+
+        a2.removeTracks("BBB");
+        System.out.println(a2.getTracks().size());
+        System.out.println(a2.getTracks());
     }
 }
 // 배열대신 컬렉션중에 하나인 ArrayList를 사용하는 예제
