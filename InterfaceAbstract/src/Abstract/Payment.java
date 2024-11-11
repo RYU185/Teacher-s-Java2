@@ -53,7 +53,11 @@ class Mobile extends Payment {
     }
     @Override
     String getReceipt() {
-        return "";
+        if (usePoint) {
+            return "모바일결제금액 : " + amount + "원 (포인트사용)";
+        }else {
+            return "모바일결제금액 : " + amount + "원";
+        }
     }
 }
 
