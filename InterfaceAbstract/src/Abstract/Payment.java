@@ -60,7 +60,19 @@ class Mobile extends Payment {
         }
     }
 }
+// 현금결제 (연습문제)
+class Cash extends Payment {
+    private double receivedAmount; // 고객으로부터 받은 현금
 
+    @Override
+    boolean processPayment() {
+        return false;
+    }
+    @Override
+    String getReceipt() {
+        return "";
+    }
+}
 
 
 
