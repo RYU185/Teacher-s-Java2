@@ -17,14 +17,20 @@ public abstract class Payment {
 class CreditCard extends Payment {
     private String cardNumber; // 신용카드번호
     private String expiryDate; // 만료일
-
+    // 자식클래스의 생성자에는 부모의 필드도 추가할 수 있음(권장)
+    public CreditCard(double amount, String id, String cardNumber, String expiryDate) {
+        super(amount, id);
+        this.cardNumber = cardNumber;
+        this.expiryDate = expiryDate;
+    }
     @Override
     boolean processPayment() {
-        return false;
+        System.out.println("신용카드로 결제 진행");
+        return true;
     }
     @Override
     String getReceipt() {
-        return "";
+        return "신용카드 결제금액 : " + amount + "원";
     }
 }
 
