@@ -8,8 +8,18 @@ abstract class Animal {
     // 미완성이므로 cry 메서드를 반드시 오버라이드 하라는 뜻!
     abstract void cry();
 }
-class Cat extends Animal {}
-class Dog extends Animal {}
+class Cat extends Animal {
+    @Override
+    void cry() {
+        System.out.println("야옹");
+    }
+}
+class Dog extends Animal {
+    @Override
+    void cry() {
+        System.out.println("멍멍");
+    }
+}
 
 public class Abstract_2 {
     public static void main(String[] args) {
