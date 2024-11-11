@@ -6,3 +6,15 @@ abstract public class Calculator {
         System.out.println("Result : " + calculate(a,b));
     }
 }
+class Addition extends Calculator {
+    @Override
+    double calculate(double a, double b) {
+        return a + b;
+    }
+}
+class Multiply extends Calculator {
+    @Override
+    double calculate(double a, double b) {
+        return a * b;
+    }
+}
