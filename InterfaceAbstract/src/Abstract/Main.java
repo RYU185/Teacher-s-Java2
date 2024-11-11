@@ -28,6 +28,16 @@ public class Main {
         if (mobile.processPayment()) {
             System.out.println(mobile.getReceipt());
         }
+        Payment cash1 = new Cash(8000, "A001",
+                10000);
+        if (cash1.processPayment()) {
+            System.out.println(cash1.getReceipt());
+        }
+        Payment cash2 = new Cash(15000, "A001",
+                10000);
+        if (cash2.processPayment()) {
+            System.out.println(cash2.getReceipt());
+        }
     }
 }
 

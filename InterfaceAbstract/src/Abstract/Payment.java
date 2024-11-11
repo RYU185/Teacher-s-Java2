@@ -25,7 +25,7 @@ class CreditCard extends Payment {
     }
     @Override
     boolean processPayment() {
-        System.out.println("신용카드로 결제 진행");
+        System.out.println("신용카드 결제 진행");
         return true;
     }
     @Override
@@ -63,14 +63,25 @@ class Mobile extends Payment {
 // 현금결제 (연습문제)
 class Cash extends Payment {
     private double receivedAmount; // 고객으로부터 받은 현금
-
+    public Cash(double amount, String id, double receivedAmount) {
+        super(amount, id);
+        this.receivedAmount = receivedAmount;
+    }
     @Override
     boolean processPayment() {
-        return false;
+        if (receivedAmount >= amount) {
+            System.out.println("현금결제 진행");
+            return true;
+        }else {
+            System.out.println("현금결제 중단 : 현금 부족");
+            return false;
+        }
     }
     @Override
     String getReceipt() {
-        return "";
+        double change = receivedAmount - amount;
+        return "현금결제금액 : " + amount + "원, 거스름돈 : "
+                + change + "원";
     }
 }
 
