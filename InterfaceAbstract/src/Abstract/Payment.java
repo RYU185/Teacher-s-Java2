@@ -44,7 +44,12 @@ class Mobile extends Payment {
     }
     @Override
     boolean processPayment() {
-        return false;
+        if (usePoint) {
+            System.out.println("모바일결제 진행(포인트 사용)");
+        }else {
+            System.out.println("모바일결제 진행");
+        }
+        return true;
     }
     @Override
     String getReceipt() {
