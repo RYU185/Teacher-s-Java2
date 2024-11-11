@@ -1,5 +1,7 @@
 package Abstract;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // Calculator
@@ -13,6 +15,19 @@ public class Main {
         System.out.println(circle.area()); // 78.53981633974483
         Shape rectangle = new Rectangle(4,6);
         System.out.println(rectangle.area()); // 24
+
+        // Payment
+        Payment credit = new CreditCard(20000, "A001",
+                "1234-5678", "2030-12-31");
+        if (credit.processPayment()) {
+            // 결제진행 결과여부에 따라 영수증 발행
+            credit.getReceipt();
+        }
+        Payment mobile = new Mobile(50000, "A001",
+                "Kakaopay", true);
+        if (mobile.processPayment()) {
+            mobile.getReceipt();
+        }
     }
 }
 
