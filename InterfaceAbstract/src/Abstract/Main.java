@@ -21,12 +21,12 @@ public class Main {
                 "1234-5678", "2030-12-31");
         if (credit.processPayment()) {
             // 결제진행 결과여부에 따라 영수증 발행
-            credit.getReceipt();
+            System.out.println(credit.getReceipt());
         }
         Payment mobile = new Mobile(50000, "A001",
                 "Kakaopay", true);
         if (mobile.processPayment()) {
-            mobile.getReceipt();
+            System.out.println(mobile.getReceipt());
         }
     }
 }
