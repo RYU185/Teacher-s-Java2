@@ -33,6 +33,24 @@ class CreditCard extends Payment {
         return "신용카드 결제금액 : " + amount + "원";
     }
 }
+// 모바일 결제
+class Mobile extends Payment {
+    private String paymentType; // 결제타입(카카오페이, 네이버페이등등)
+    private boolean usePoint; // 결제타입 포인트 사용유무
+    public Mobile(double amount, String id, String paymentType, boolean usePoint) {
+        super(amount, id);
+        this.paymentType = paymentType;
+        this.usePoint = usePoint;
+    }
+    @Override
+    boolean processPayment() {
+        return false;
+    }
+    @Override
+    String getReceipt() {
+        return "";
+    }
+}
 
 
 
