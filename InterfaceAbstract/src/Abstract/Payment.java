@@ -13,3 +13,28 @@ public abstract class Payment {
     abstract boolean processPayment(); // 결제진행 메서드
     abstract String getReceipt(); // 영수증발행
 }
+// 신용카드 결제
+class CreditCard extends Payment {
+    private String cardNumber; // 신용카드번호
+    private String expiryDate; // 만료일
+
+    @Override
+    boolean processPayment() {
+        return false;
+    }
+    @Override
+    String getReceipt() {
+        return "";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
