@@ -19,7 +19,13 @@ public class Abstract_3 {
             }
         };
         a1.abc();
-        
+        // 단점, a1말고 다른 인스턴스를 생성하려면 다시 익명이너클래스를 이용해야함
+        A a2 = new A() {
+            @Override
+            void abc() {
+                System.out.println("익명이너클래스 다시 생성");
+            }
+        };
     }
 }
 
