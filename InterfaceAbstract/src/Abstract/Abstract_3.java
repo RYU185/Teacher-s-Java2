@@ -10,7 +10,7 @@ abstract class A {
 public class Abstract_3 {
     public static void main(String[] args) {
         // 원래 외부에 A클래스를 상속받아 오버라이드를 구현해야하나,
-        // 인스턴스를 한번만 사용할 목적으로 아래와 같이
+        // 인스턴스(a1)를 한번만 사용할 목적으로 아래와 같이
         // 익명이너클래스를 사용할 수 있음
         A a1 = new A() {
             @Override
