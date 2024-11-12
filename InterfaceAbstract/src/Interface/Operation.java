@@ -11,3 +11,9 @@ class Add implements Operation {
         return a + b;
     }
 }
+class Subtract implements Operation {
+    @Override
+    public int calculate(int a, int b) {
+        return a - b;
+    }
+}
