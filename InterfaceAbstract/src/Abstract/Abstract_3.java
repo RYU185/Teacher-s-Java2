@@ -13,9 +13,9 @@ public class Abstract_3 {
         // 인스턴스를 한번만 사용할 목적으로 아래와 같이
         // 익명이너클래스를 사용할 수 있음
         A a1 = new A() {
-                @Override
-                void abc() {
-                    System.out.println("익명이너클래스로 객체 생성");
+            @Override
+            void abc() {
+                System.out.println("익명이너클래스로 객체 생성");
             }
         };
         a1.abc();
