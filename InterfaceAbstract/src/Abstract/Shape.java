@@ -34,7 +34,16 @@ class Rectangle extends Shape {
         return x * y;
     }
 }
-
+// 정사각형 - Rectangle 상속
+class Square extends Rectangle {
+    public Square(double x) {
+        super(x, x);
+    }
+    @Override
+    double area() {
+        return x * x;
+    }
+}
 
 
 
