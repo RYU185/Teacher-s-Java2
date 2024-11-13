@@ -20,7 +20,15 @@ class Warrior extends Character {
     }
 }
 // 마법사
-class Mage extends Character {}
+class Mage extends Character {
+    public Mage(String name, int hp) {
+        super(name, hp);
+    }
+    @Override
+    void doAction() {
+        System.out.println("마법사는 마법 공격");   
+    }
+}
 
 public class Example2 {
     public static void main(String[] args) {
