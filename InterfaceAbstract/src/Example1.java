@@ -41,13 +41,17 @@ class Phone extends Device implements WiFi,Bluetooth {
     }
 }
 // 노트북
-class Laptop extends Device {
+class Laptop extends Device implements WiFi {
     public Laptop(String brand, String model) {
         super(brand, model);
     }
     @Override
     public void doFunction() {
         System.out.println("노트북은 프로그램을 실행합니다");
+    }
+    @Override
+    public void connectToWiFi() {
+        System.out.println("노트북으로 와이파이에 연결합니다");
     }
 }
 
