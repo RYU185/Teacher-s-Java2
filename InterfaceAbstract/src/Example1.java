@@ -59,11 +59,17 @@ public class Example1 {
     public static void main(String[] args) {
         Device phone = new Phone("삼성", "갤럭시 S24");
         Device laptop = new Laptop("Apple", "MacBook Pro");
+        // 휴대폰
         phone.powerOn();
         phone.doFunction();
+        ((WiFi)phone).connectToWiFi();
+        ((Bluetooth)phone).connectToBluetooth();
         phone.powerOff();
+
+        // 노트북
         laptop.powerOn();
         laptop.doFunction();
+        ((WiFi)laptop).connectToWiFi();
         laptop.powerOff();
     }
 }
