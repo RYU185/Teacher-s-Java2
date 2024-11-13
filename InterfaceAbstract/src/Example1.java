@@ -23,13 +23,21 @@ interface Bluetooth {
     void connectToBluetooth(); // 추상메서드
 }
 // 휴대폰
-class Phone extends Device {
+class Phone extends Device implements WiFi,Bluetooth {
     public Phone(String brand, String model) {
         super(brand, model);
     }
     @Override
     public void doFunction() {
         System.out.println("휴대폰으로 전화를 겁니다");
+    }
+    @Override
+    public void connectToWiFi() {
+        System.out.println("휴대폰으로 와이파이에 연결합니다");
+    }
+    @Override
+    public void connectToBluetooth() {
+        System.out.println("휴대폰으로 블루투스에 연결합니다");
     }
 }
 // 노트북
