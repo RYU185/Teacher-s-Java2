@@ -10,7 +10,15 @@ abstract class Character {
     abstract void doAction(); // 추상메서드
 }
 // 전사
-class Warrior extends Character {}
+class Warrior extends Character {
+    public Warrior(String name, int hp) {
+        super(name, hp);
+    }
+    @Override
+    void doAction() {
+        System.out.println("전사는 근접 공격");
+    }
+}
 // 마법사
 class Mage extends Character {}
 
