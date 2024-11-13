@@ -26,6 +26,16 @@ class Phone extends Device {
         System.out.println("휴대폰으로 전화를 겁니다");
     }
 }
+// 노트북
+class Laptop extends Device {
+    public Laptop(String brand, String model) {
+        super(brand, model);
+    }
+    @Override
+    public void doFunction() {
+        System.out.println("노트북은 프로그램을 실행합니다");   
+    }
+}
 
 public class Example1 {
 }
