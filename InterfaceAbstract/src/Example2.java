@@ -6,7 +6,11 @@ abstract class Character {
         this.name = name;
         this.hp = hp;
     }
-    public void takeDamage(int amount) {}
+    public void takeDamage(int amount) {
+        hp = hp - amount; // 공격을 받으면 받은 공격량만큼을 생명에서 뺀다
+        System.out.println(name + "은 " + amount + "만큼의 공격을 받음 " +
+                " 남은 생명은 " + hp);
+    }
     abstract void doAction(); // 추상메서드
 }
 // 기능 인터페이스 : 근접공격
