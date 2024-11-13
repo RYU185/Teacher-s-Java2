@@ -62,6 +62,8 @@ public class Example1 {
         // 휴대폰
         phone.powerOn();
         phone.doFunction();
+        // 동적바이딩이 부모클래스인 Device로 되어있으므로 
+        // connectToWiFi를 호출하기 위해 타입변환이 필요함
         ((WiFi)phone).connectToWiFi();
         ((Bluetooth)phone).connectToBluetooth();
         phone.powerOff();
