@@ -15,11 +15,11 @@ abstract class Character {
 }
 // 기능 인터페이스 : 근접공격
 interface MeleeAttacker {
-    void meleeAttack(Character target); // 추상메서드
+    void meleeAttack(Character target, int amount); // 추상메서드
 }
 // 기능 인터페이스 : 마법공격
 interface MagicCaster {
-    void castSpell(Character target); // 추상메서드
+    void castSpell(Character target, int amount); // 추상메서드
 }
 // 전사
 class Warrior extends Character implements MeleeAttacker {
@@ -31,9 +31,9 @@ class Warrior extends Character implements MeleeAttacker {
         System.out.println("전사는 근접 공격");
     }
     @Override
-    public void meleeAttack(Character target) {
+    public void meleeAttack(Character target, int amount) {
         System.out.println(name + "가 " + target.name + "를 공격");
-        target.takeDamage(20);
+        target.takeDamage(amount);
     }
 }
 // 마법사
@@ -46,14 +46,19 @@ class Mage extends Character implements MagicCaster {
         System.out.println("마법사는 마법 공격");
     }
     @Override
-    public void castSpell(Character target) {
+    public void castSpell(Character target, int amount) {
         System.out.println(name + "가 " + target.name + "를 공격");
-        target.takeDamage(10);
+        target.takeDamage(amount);
     }
 }
 
 public class Example2 {
     public static void main(String[] args) {
-
+        Character a = new Warrior("전사A", 100);
+        Character b = new Mage("마법사B", 80);
+        a.doAction();
+        ((MeleeAttacker) a).meleeAttack(b);
+        b.doAction();
+        ((MagicCaster) b).castSpell(a);
     }
 }
