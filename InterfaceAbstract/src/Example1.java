@@ -23,7 +23,7 @@ class Phone extends Device {
     }
     @Override
     public void doFunction() {
-        System.out.println("휴대폰이 전화를 겁니다");
+        System.out.println("휴대폰으로 전화를 겁니다");
     }
 }
 
