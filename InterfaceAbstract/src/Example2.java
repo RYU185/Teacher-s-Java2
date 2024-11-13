@@ -57,8 +57,8 @@ public class Example2 {
         Character a = new Warrior("전사A", 100);
         Character b = new Mage("마법사B", 80);
         a.doAction();
-        ((MeleeAttacker) a).meleeAttack(b);
+        ((MeleeAttacker) a).meleeAttack(b, 20);
         b.doAction();
-        ((MagicCaster) b).castSpell(a);
+        ((MagicCaster) b).castSpell(a, 10);
     }
 }
