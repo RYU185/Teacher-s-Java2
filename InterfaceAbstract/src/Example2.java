@@ -9,6 +9,14 @@ abstract class Character {
     public void takeDamage(int amount) {}
     abstract void doAction(); // 추상메서드
 }
+// 기능 인터페이스 : 근접공격
+interface MeleeAttacker {
+    void meleeAttack(Character target); // 추상메서드
+}
+// 기능 인터페이스 : 마법공격
+interface MagicCaster {
+    void castSpell(Character target); // 추상메서드
+}
 // 전사
 class Warrior extends Character {
     public Warrior(String name, int hp) {
@@ -26,7 +34,7 @@ class Mage extends Character {
     }
     @Override
     void doAction() {
-        System.out.println("마법사는 마법 공격");   
+        System.out.println("마법사는 마법 공격");
     }
 }
 
