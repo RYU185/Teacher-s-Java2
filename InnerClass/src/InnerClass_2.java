@@ -11,8 +11,13 @@ class A2 {
             System.out.println("B클래스 메서드");
         }
         void bcd() {
+            // 이너클래스 본인의 멤버를 참조 사용한다
             System.out.println(a);
             abc();
+            // 아우터클래스의 멤버는 어떻게 접근하나??
+            // this는 B2를 가르킴. A2.this가 아우터클래스를 참조할 수 있는 방법
+            System.out.println(A2.this.a);
+            A2.this.abc();
         }
     }
 }
