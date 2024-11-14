@@ -8,7 +8,7 @@ class A3 {
         System.out.println("정적 메서드");
     }
     static class B3 {
-        static void bcd() {
+        void bcd() {
             // 인스턴스 필드 a와 인스턴스 메서드 method1()은
             // A3클래스가 메모리에 생성되어야 만들어지는 멤버이므로
             // A3클래스의 인스턴스없이 참조가 불가능함
@@ -23,6 +23,10 @@ class A3 {
 
 public class InnerClass_3 {
     public static void main(String[] args) {
-        A3.B3.bcd();
+        //A3.B3.bcd();
+        //A3 a = new A3();
+        //A3.B3 b = a.new B3();
+        A3.B3 b = new A3.B3();
+        b.bcd();
     }
 }
