@@ -7,6 +7,7 @@ class A3 {
     static void method2() {
         System.out.println("정적 메서드");
     }
+    // 정적이너클래스
     static class B3 {
         void bcd() {
             // 인스턴스 필드 a와 인스턴스 메서드 method1()은
