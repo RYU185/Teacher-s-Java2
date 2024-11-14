@@ -23,9 +23,11 @@ class A3 {
 
 public class InnerClass_3 {
     public static void main(String[] args) {
-        //A3.B3.bcd();
         //A3 a = new A3();
         //A3.B3 b = a.new B3();
+        // B3 이너클래스를 static으로 선언한 의미는 A3의 다른 정적멤버들과
+        // 마찬가지로 A3의 인스턴스없이 사용이 가능하다는 뜻
+        // A3클래스의 인스턴스를 만들 필요없이 B3의 인스턴스를 생성할 수 있음!!
         A3.B3 b = new A3.B3();
         b.bcd();
     }
