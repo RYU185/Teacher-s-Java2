@@ -39,7 +39,7 @@ public class Generic_5 {
         kv3.setKey("키값만 사용");
         String key = kv3.getKey();
         System.out.println(key);
-        // seValue()는 Void타입만 매개변수로 받을 수 있음
+        // setValue()는 Void타입만 매개변수로 받을 수 있음
         // Void는 null만이 유일한 값임
         //kv3.setValue(1); // 에러발생 Void대신 Integer를 입력했기때문
         //kv3.setValue("hello"); // 에러 Void대신 문자열을 입력했기때문
