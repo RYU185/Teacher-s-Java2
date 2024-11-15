@@ -18,6 +18,27 @@ class KeyValue<K,V> {
     }
 }
 
-
 public class Generic_5 {
+    public static void main(String[] args) {
+        // <문자열, 정수>
+        KeyValue<String, Integer> kv1 = new KeyValue<>();
+        kv1.setKey("사과");
+        kv1.setValue(1000);
+        String key1 = kv1.getKey();
+        int value1 = kv1.getValue();
+        // <정수, 문자열>
+        KeyValue<Integer, String> kv2 = new KeyValue<>();
+        kv2.setKey(404); // 웹브라우저 에러코드 404
+        kv2.setValue("Not Found Error"); // 에러설명
+        int key2 = kv2.getKey();
+        String value2 = kv2.getValue();
+    }
 }
+
+
+
+
+
+
+
+
