@@ -22,6 +22,8 @@ public class Generic_2 {
         goods2.setObject(new Pencil());
         Pencil pencil = (Pencil)goods2.getObject(); // Pencil로 다운캐스팅
 
-        
+        // 실수로 Apple이 담겨있는 goods1 객체에서 Pencil을 꺼냄
+        // 하지만 컴파일 에러가 발생하지않음. 이유는???
+        Pencil pencil2 = (Pencil)goods1.getObject();
     }
 }
