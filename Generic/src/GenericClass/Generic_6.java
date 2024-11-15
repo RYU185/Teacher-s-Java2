@@ -22,7 +22,12 @@ class Triple<A,B,C> {
 
 public class Generic_6 {
     public static void main(String[] args) {
-
+        Triple<String, Integer, Double> triple =
+                new Triple<>("apple", 3, 1.54);
+        String fruit = triple.getFirst();
+        Integer count = triple.getSecond();
+        Double weight = triple.getThird();
+        System.out.println(fruit + " " + count + " " + weight);
     }
 }
 
