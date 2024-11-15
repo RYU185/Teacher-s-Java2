@@ -17,6 +17,12 @@ class MyClass<T> {
 
 public class Generic_3 {
     public static void main(String[] args) {
-
+        // 제네릭타입 T는 객체생성시점에 결정되어야 함
+        MyClass<String> mc1 = new MyClass<>();
+        mc1.setT("Hello"); // 문자열저장
+        MyClass<Integer> mc2 = new MyClass<>();
+        mc2.setT(100); // 정수저장
+        mc2.setT("Hello"); // 컴파일에러 발생
+        // 제네릭타입은 강한 타입체크를 수행하므로 타입을 잘못 사용하면 즉시 에러!!
     }
 }
