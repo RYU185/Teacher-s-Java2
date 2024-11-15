@@ -22,7 +22,7 @@ public class Generic_3 {
         mc1.setT("Hello"); // 문자열저장
         MyClass<Integer> mc2 = new MyClass<>();
         mc2.setT(100); // 정수저장
-        mc2.setT("Hello"); // 컴파일에러 발생
+        //mc2.setT("Hello"); // 컴파일에러 발생
         // 제네릭타입은 강한 타입체크를 수행하므로 타입을 잘못 사용하면 즉시 에러!!
     }
 }
