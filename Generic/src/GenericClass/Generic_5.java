@@ -34,6 +34,17 @@ public class Generic_5 {
         kv2.setValue("Not Found Error"); // 에러설명
         int key2 = kv2.getKey();
         String value2 = kv2.getValue();
+        // key만 저장하고 value는 아무 값도 저장하고 싶지 않은 경우
+        KeyValue<String, Void> kv3 = new KeyValue<>();
+        kv3.setKey("키값만 사용");
+        String key = kv3.getKey();
+        System.out.println(key);
+        // seValue()는 Void타입만 매개변수로 받을 수 있음
+        // Void는 null만이 유일한 값임
+        //kv3.setValue(1); // 에러발생 Void대신 Integer를 입력했기때문
+        //kv3.setValue("hello"); // 에러 Void대신 문자열을 입력했기때문
+        kv3.setValue(null); // null은 저장 가능
+        System.out.println(kv3.getValue());
     }
 }
 
