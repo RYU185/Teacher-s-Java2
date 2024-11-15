@@ -32,7 +32,7 @@ public class Generic_1 {
         Goods2 goods2 = new Goods2();
         goods2.setPencil(new Pencil());
         Pencil pencil = goods2.getPencil();
-        //goods1.setApple(new Pencil());
+        //goods1.setApple(new Pencil()); // 오류
         // goods1에는 연필 객체를 담을수없음.
         // <문제점> 모든 상품마다 Goods클래스가 필요함!!
     }
