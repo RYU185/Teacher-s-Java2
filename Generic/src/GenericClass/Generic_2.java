@@ -24,6 +24,11 @@ public class Generic_2 {
 
         // 실수로 Apple이 담겨있는 goods1 객체에서 Pencil을 꺼냄
         // 하지만 컴파일 에러가 발생하지않음. 이유는???
-        Pencil pencil2 = (Pencil)goods1.getObject();
+        // Object는 모든 클래스의 부모클래스로서 모든 타입의 객체 저장 가능
+        // 자바의 특성상 Object는 약한 타입체크 방식으로 동작됨
+        // (다른 참조형 타입들은 엄격한(=강한) 타입체크 사용)
+        // 그러므로 컴파일시점에는 타입이 맞는지 여부를 확인할 수 없으며
+        // 런타임시에 실제 타입 기반으로 확인하게 됨
+        Pencil pencil2 = (Pencil)goods1.getObject(); // 런타임에러 발생
     }
 }
