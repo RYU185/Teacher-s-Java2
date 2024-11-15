@@ -16,6 +16,12 @@ public class Generic_2 {
         Goods goods1 = new Goods();
         goods1.setObject(new Apple());
         // getObject()는 Object를 리턴하므로 Apple로 다운캐스팅 필요
-        Apple apple = (Apple)goods1.getObject(); 
+        Apple apple = (Apple)goods1.getObject();
+
+        Goods goods2 = new Goods();
+        goods2.setObject(new Pencil());
+        Pencil pencil = (Pencil)goods2.getObject(); // Pencil로 다운캐스팅
+
+        
     }
 }
