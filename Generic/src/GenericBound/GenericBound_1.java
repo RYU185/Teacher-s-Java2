@@ -16,4 +16,21 @@ class D <T extends B> {
 }
 
 public class GenericBound_1 {
+    public static void main(String[] args) {
+        //D<A> d1 = new D<>(); // T extends B 이므로 A는 올 수 없음
+        D<B> d2 = new D<>();
+        D<C> d3 = new D<>();
+
+        d2.setT(new B());
+        d2.setT(new C()); // C는 B이므로 가능
+
+        //d3.setT(new B()); // B는 C가 아니므로 불가능
+        d3.setT(new C());
+    }
 }
+
+
+
+
+
+
