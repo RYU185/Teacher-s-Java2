@@ -15,11 +15,12 @@ class Goods<T> {
     }
 }
 class Test {
-    void method1(Goods<A> g) {}
+    void method1(Goods<A3> g) {}
     void method2(Goods<?> g) {}
-    void method3(Goods<? extends B> g) {}
-    void method4(Goods<? super B> g) {}
+    void method3(Goods<? extends B3> g) {}
+    void method4(Goods<? super B3> g) {}
 }
 
 public class GenericBound_3 {
+    
 }
