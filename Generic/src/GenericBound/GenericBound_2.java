@@ -9,8 +9,10 @@ interface MyInterface {
     public abstract void print();
 }
 class B2 {
+    // *** 제네릭에서는 인터페이스의 상속도 extends를 사용한다!!! ***
+    // 매개변수 t는 반드시 MyInterface의 구현체여야 함
     public <T extends MyInterface> void method1(T t) {
-        t.print();
+        t.print(); // 구현체 t는 print()를 오버라이드
     }
 }
 
