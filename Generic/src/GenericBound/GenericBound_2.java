@@ -17,6 +17,12 @@ class B2 {
 }
 
 public class GenericBound_2 {
+    public static void main(String[] args) {
+        A2 a = new A2();
+        a.method1(5.8); // a.<Double>method1(5.8)과 동일
+
+        
+    }
 }
 
 
