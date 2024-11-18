@@ -16,6 +16,8 @@ class MyClass {
 
 public class GenericMethod_1 {
     public static void main(String[] args) {
-
+        MyClass a = new MyClass();
+        String str1 = a.<String>method1("안녕");
+        String str2 = a.method1("안녕"); // 주로 생략해서 사용함!!
     }
 }
