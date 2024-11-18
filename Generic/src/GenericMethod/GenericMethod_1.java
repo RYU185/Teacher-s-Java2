@@ -2,6 +2,7 @@ package GenericMethod;
 
 // 일반클래스안에도 제네릭 메서드 사용 가능!
 class MyClass {
+    // 제네릭 선언<T> 위치 주의
     public <T> T method1(T t) {
         return t;
     }
