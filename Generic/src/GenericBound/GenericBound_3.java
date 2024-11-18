@@ -37,6 +37,14 @@ public class GenericBound_3 {
         t.method2(new Goods<B3>());
         t.method2(new Goods<C3>());
         t.method2(new Goods<D3>());
+
+        // #3. method3
+        // 상한제한 extends
+        // B3와 B3의 자식클래스만 사용 가능
+        //t.method3(new Goods<A3>()); // 오류
+        t.method3(new Goods<B3>());
+        t.method3(new Goods<C3>());
+        t.method3(new Goods<D3>());
     }
 }
 
