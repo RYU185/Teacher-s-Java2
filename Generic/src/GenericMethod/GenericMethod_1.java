@@ -23,5 +23,8 @@ public class GenericMethod_1 {
 
         boolean bool1 = a.<Double>method2(2.5, 2.5);
         boolean bool2 = a.method2(2.5, 2.5);
+
+        a.<String, Integer>method3("국어", 80);
+        a.method3("국어", 80);
     }
 }
