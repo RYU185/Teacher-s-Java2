@@ -5,6 +5,17 @@ class A2 {
         System.out.println(t.intValue());
     }
 }
+interface MyInterface {
+    public abstract void print();
+}
+class B2 {
+    public <T extends MyInterface> void method1(T t) {
+        t.print();
+    }
+}
 
 public class GenericBound_2 {
 }
+
+
+
