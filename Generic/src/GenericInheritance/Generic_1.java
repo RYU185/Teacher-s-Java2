@@ -1,5 +1,6 @@
 package GenericInheritance;
 
+// 제네릭클래스의 상속
 class Parent<T> {
     T t;
     public T getT() {
