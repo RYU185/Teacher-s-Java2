@@ -1,0 +1,42 @@
+<제네릭문법>
+와일드카드(= ?)
+: 제네릭 타입을 매개변수나 리턴 타입으로 사용할 때 구체적인 타입 대신 사용할 수 있는 특수한 타입 인자
+
+와일드카드 사용법
+1. 제한없는 와일드카드
+public static void printList(List<?> list) {
+    for (Object item : list) {
+        System.out.println(item);
+    }
+}
+2. 상한 제한 와일드카드
+public static double sum(List<? extends Number> list) {
+    double sum = 0.0;
+    for (Number num : list) {
+        sum += num.doubleValue();
+    }
+    return sum;
+}
+3. 하한 제한 와일드카드
+public static void addNumbers(List<? super Integer> list) {
+    for (int i = 1; i <= 10; i++) {
+        list.add(i);
+    }
+}
+
+와일드카드 주의사항
+1. 단독으로 사용할 수 없고, < >안에만 사용해야함
+2. 제네릭 클래스 정의에서 사용할 수 없음
+class Goods<?> {  // 오류
+    private ? item;  // 오류
+}
+3. 제네릭 불변성
+: 제네릭 타입간에는 기본적으로 상속관계가 적용되지 않음
+List<Object> objectList = new ArrayList<String>();  // 불가능
+List<Number> numberList = new ArrayList<Integer>(); // 불가능
+// extends를 사용한 상한 제한
+List<? extends Number> numbers = new ArrayList<Integer>(); // OK
+List<? extends Number> numbers2 = new ArrayList<Double>(); // OK
+// super를 사용한 하한 제한
+List<? super Integer> integers = new ArrayList<Number>(); // OK
+List<? super Integer> integers2 = new ArrayList<Object>(); // OK
