@@ -19,5 +19,9 @@ public class GenericMethod_1 {
         MyClass a = new MyClass();
         String str1 = a.<String>method1("안녕");
         String str2 = a.method1("안녕"); // 주로 생략해서 사용함!!
+        //<String>생략해도 주어진 정보만으로 컴파일 오류여부를 컴파일러가 판단 가능함
+
+        boolean bool1 = a.<Double>method2(2.5, 2.5);
+        boolean bool2 = a.method2(2.5, 2.5);
     }
 }
