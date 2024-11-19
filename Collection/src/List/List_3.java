@@ -63,7 +63,12 @@ public class List_3 {
         }
         // #12 toArray 리스트를 배열로 타입변환
         Object[] objects = aList3.toArray();
+        // 아래와 같이 타입변환하는 것은 매우 위험함!!
+        // Object의 약한(느슨한) 타입체크로 인해 정상동작을 담보할 수 없음
+        //Integer[] integers = (Integer[]) aList3.toArray(); // 권장X
         System.out.println(Arrays.toString(objects)); // [1,2,3]
+
+        
     }
 }
 
