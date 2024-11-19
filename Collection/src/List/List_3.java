@@ -50,6 +50,16 @@ public class List_3 {
         aList3.add(3);
         System.out.println(aList3); // [1, 2, 3]
         System.out.println(aList3.size()); // 3
+        // #11. get 리스트의 요소를 읽음
+        // *** <주의> List를 배열처럼 인덱스[i]로 읽으면 안됨!!! ***
+        // System.out.println(aList3[0]); // 오류
+        System.out.println(aList3.get(0)); // 1
+        System.out.println(aList3.get(1)); // 2
+        System.out.println(aList3.get(2)); // 3
+        // 반복문 사용법이 다르기때문에 반드시 숙지해야함!!
+        for (int i=0; i<aList3.size(); i++) {
+            System.out.println(aList3.get(i));
+        }
     }
 }
 
