@@ -36,8 +36,20 @@ public class List_3 {
         aList3.remove(1); // 1이 아니라 5가 삭제됨
         System.out.println(aList3); // [1, 2, 6]
         // #7. remove(Object o) 해당 요소를 찾아서 삭제
-        aList3.remove(Integer.valueOf(2));
+        aList3.remove(Integer.valueOf(2)); // Integer로 타입변환
         System.out.println(aList3); // [1, 6]
+        // #8. clear 모두 삭제
+        aList3.clear();
+        System.out.println(aList3); // []
+        // #9. isEmpty 요소가 있는지 없는지 확인할때 사용. 비었으면 true리턴
+        System.out.println(aList3.isEmpty()); // true
+        // #10. size 리스트의 요소 갯수를 리턴
+        System.out.println(aList3.size()); // 0
+        aList3.add(1);
+        aList3.add(2);
+        aList3.add(3);
+        System.out.println(aList3); // [1, 2, 3]
+        System.out.println(aList3.size()); // 3
     }
 }
 
