@@ -1,6 +1,7 @@
 package List;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 // ArrayList의 사용법 (메서드사용법)
@@ -60,6 +61,9 @@ public class List_3 {
         for (int i=0; i<aList3.size(); i++) {
             System.out.println(aList3.get(i));
         }
+        // #12 toArray 리스트를 배열로 타입변환
+        Object[] objects = aList3.toArray();
+        System.out.println(Arrays.toString(objects)); // [1,2,3]
     }
 }
 
