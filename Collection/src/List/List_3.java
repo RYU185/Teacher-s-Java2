@@ -31,6 +31,11 @@ public class List_3 {
         aList3.set(1,5);
         aList3.set(3,6);
         System.out.println(aList3); // [1, 5, 2, 6]
+        // #6. remove(int index) 해당 인덱스의 요소 삭제
+        // (주의)정수의 리스트인 경우에는 정수를 매개변수에 넣으면 인덱스로 인식함!!
+        aList3.remove(1); // 1이 아니라 5가 삭제됨
+        System.out.println(aList3); // [1, 2, 6]
+        // #7. remove(Object o) 해당 요소를 찾아서 삭제
     }
 }
 
