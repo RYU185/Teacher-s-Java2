@@ -1,6 +1,7 @@
 package List;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 // List 구현클래스의 생성 예제
@@ -12,5 +13,17 @@ public class List_2 {
         // ArrayList 내부적으로 메모리용량을 미리 예약해두는 개념이며
         // 실제 size는 아님!!
         System.out.println(aList2.size()); // 0
+
+        // #2. 배열을 List로 전환하는 방법
+        Integer[] array = {1,2,3,4}; // 정수의 배열
+        List<Integer> aList3 = Arrays.asList(array);
+        System.out.println(aList3);
     }
 }
+
+
+
+
+
+
+
