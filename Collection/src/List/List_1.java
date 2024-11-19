@@ -1,6 +1,8 @@
 package List;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 // 배열과 리스트의 비교
 public class List_1 {
@@ -12,5 +14,24 @@ public class List_1 {
         // 배열은 요소를 삭제해도 메모리 공간은 남아있고 사이즈도 그대로임
         System.out.println(array.length);
         System.out.println(Arrays.toString(array));
+
+        // List
+        // List는 인터페이스이므로 객체생성시 구현클래스가 필요함
+        // 가장 유명한 List의 구현클래스는 ArrayList !!
+        List<String> aList = new ArrayList<>();
+        System.out.println(aList.size()); // 0 (empty 비어있음)
+        aList.add("A");
+        aList.add("B");
+        aList.add("C");
+        aList.add("D");
+        System.out.println(aList.size()); // 4
     }
 }
+
+
+
+
+
+
+
+
