@@ -36,6 +36,8 @@ public class List_3 {
         aList3.remove(1); // 1이 아니라 5가 삭제됨
         System.out.println(aList3); // [1, 2, 6]
         // #7. remove(Object o) 해당 요소를 찾아서 삭제
+        aList3.remove(Integer.valueOf(2));
+        System.out.println(aList3); // [1, 6]
     }
 }
 
