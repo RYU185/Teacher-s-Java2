@@ -66,9 +66,10 @@ public class List_3 {
         // 아래와 같이 타입변환하는 것은 매우 위험함!!
         // Object의 약한(느슨한) 타입체크로 인해 정상동작을 담보할 수 없음
         //Integer[] integers = (Integer[]) aList3.toArray(); // 권장X
-        System.out.println(Arrays.toString(objects)); // [1,2,3]
-
-        
+        System.out.println(Arrays.toString(objects)); // [1, 2, 3]
+        // 그럼 어떻게 타입변환해야 안전한가?
+        Integer[] integers = aList3.toArray(new Integer[0]);
+        System.out.println(Arrays.toString(integers)); // [1, 2, 3]
     }
 }
 
