@@ -69,6 +69,8 @@ public class List_3 {
         System.out.println(Arrays.toString(objects)); // [1, 2, 3]
         // 그럼 어떻게 타입변환해야 안전한가?
         Integer[] integers = aList3.toArray(new Integer[0]);
+        // new Integer[0]는 0의 length를 가진 배열을 만드는게 아니라
+        // aList3.size() 와 같은 배열크기로 만들라는 약속!!
         System.out.println(Arrays.toString(integers)); // [1, 2, 3]
     }
 }
