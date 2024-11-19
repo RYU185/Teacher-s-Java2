@@ -25,6 +25,9 @@ public class List_1 {
         aList.add("C");
         aList.add("D");
         System.out.println(aList.size()); // 4
+        aList.remove("C");
+        System.out.println(aList.size()); // 3 (메모리영역이 삭제됨)
+        System.out.println(aList); // [A, B, D]
     }
 }
 
