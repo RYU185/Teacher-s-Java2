@@ -15,6 +15,12 @@ public class List_3 {
         // #2. add(int index, E element) (요소추가, 특정 위치에 추가)
         aList1.add(1,6);
         System.out.println(aList1); // [3,6,4,5]
+        // #3. addAll (또 다른 리스트를 뒤에 추가)
+        List<Integer> aList2 = new ArrayList<>();
+        aList2.add(1);
+        aList2.add(2);
+        aList2.addAll(aList1);
+        System.out.println(aList2); // [1, 2, 3, 6, 4, 5]
     }
 }
 
