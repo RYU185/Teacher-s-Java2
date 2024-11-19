@@ -16,8 +16,12 @@ public class List_2 {
 
         // #2. 배열을 List로 전환하는 방법
         Integer[] array = {1,2,3,4}; // 정수의 배열
+        // Arrays 클래스의 asList 메서드를 사용하여 배열을 List로 바꿀 수 있음
         List<Integer> aList3 = Arrays.asList(array);
-        System.out.println(aList3);
+        System.out.println(aList3); // [1, 2, 3, 4]
+        // List 추가, 삭제
+        aList3.add(5);
+        aList3.remove(Integer.valueOf(1));
     }
 }
 
