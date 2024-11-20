@@ -115,8 +115,6 @@ public class HashSet_2 {
         System.out.println(hset3.size()); // 1
 
 
-
-
         D d1 = new D(5,6);
         D d2 = new D(5,6);
         System.out.println(d1.hashCode());
