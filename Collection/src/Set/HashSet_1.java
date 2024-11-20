@@ -1,6 +1,7 @@
 package Set;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 public class HashSet_1 {
@@ -35,7 +36,11 @@ public class HashSet_1 {
         System.out.println(hset3.contains("D")); // false
         // #7. size
         System.out.println(hset3.size()); // 3
-        
+        // #8. iterator
+        Iterator<String> iterator = hset3.iterator();
+        while(iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
 
