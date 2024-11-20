@@ -1,4 +1,7 @@
 package Set;
+
+import java.util.Objects;
+
 // A클래스는 equals와 hashcode를 오버라이드하지 않음
 class A {
     int data;
@@ -36,6 +39,10 @@ class C {
         }else {
             return false;
         }
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(data);
     }
 }
 
