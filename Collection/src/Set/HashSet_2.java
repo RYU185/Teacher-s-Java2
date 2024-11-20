@@ -20,7 +20,6 @@ class B {
         }else {
             return false;
         }
-
     }
 }
 // C클래스는 equals와 hashcode를 모두 오버라이드함
