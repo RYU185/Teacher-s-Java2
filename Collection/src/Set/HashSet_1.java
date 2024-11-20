@@ -26,6 +26,13 @@ public class HashSet_1 {
         System.out.println(hset2); // []
         // #5. isEmpty
         System.out.println(hset2.isEmpty()); // true
+        // #6. contains
+        Set<String> hset3 = new HashSet<>();
+        hset3.add("A");
+        hset3.add("B");
+        hset3.add("C");
+        System.out.println(hset3.contains("B")); // true
+        System.out.println(hset3.contains("D")); // false
     }
 }
 
