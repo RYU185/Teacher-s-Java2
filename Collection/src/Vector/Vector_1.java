@@ -1,5 +1,6 @@
 package Vector;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 
@@ -51,6 +52,17 @@ public class Vector_1 {
         vector3.add(2);
         vector3.add(3);
         System.out.println(vector3.size()); // 3
+        // #11. get 읽기
+        for (int i=0; i<vector3.size(); i++) {
+            System.out.println(vector3.get(i));
+        }
+        // #12. toArray 리스트를 배열로 타입변환
+        // toArray는 오브젝트의 배열을 리턴하므로 오브젝트의 배열 타입으로 받아야함
+        Object[] objects = vector3.toArray();
+        System.out.println(Arrays.toString(objects)); // [1,2,3]
+        // #13. toArray (Integer의 배열로 받으려면 별도의 명시를 해줘야함)
+        Integer[] integers = vector3.toArray(new Integer[0]);
+        System.out.println(Arrays.toString(integers)); // [1,2,3]
     }
 }
 
