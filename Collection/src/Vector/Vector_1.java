@@ -40,6 +40,17 @@ public class Vector_1 {
         // #7. remove(Object o) 값으로 삭제
         vector3.remove(Integer.valueOf(2));
         System.out.println(vector3); // [1,6]
+        // #8. clear 전체삭제
+        vector3.clear();
+        System.out.println(vector3); // []
+        // #9. isEmpty 리스트가 비었는지 확인 (참 또는 거짓 리턴)
+        System.out.println(vector3.isEmpty()); // true
+        // #10. size 리스트내 요소의 갯수
+        System.out.println(vector3.size()); // 0
+        vector3.add(1);
+        vector3.add(2);
+        vector3.add(3);
+        System.out.println(vector3.size()); // 3
     }
 }
 
