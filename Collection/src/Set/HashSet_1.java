@@ -33,6 +33,9 @@ public class HashSet_1 {
         hset3.add("C");
         System.out.println(hset3.contains("B")); // true
         System.out.println(hset3.contains("D")); // false
+        // #7. size
+        System.out.println(hset3.size()); // 3
+        
     }
 }
 
