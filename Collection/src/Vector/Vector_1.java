@@ -34,6 +34,12 @@ public class Vector_1 {
         vector3.set(1,5);
         vector3.set(3,6);
         System.out.println(vector3); // [1,5,2,6]
+        // #6. remove(int index) 인덱스로 삭제
+        vector3.remove(1);
+        System.out.println(vector3); // [1,2,6]
+        // #7. remove(Object o) 값으로 삭제
+        vector3.remove(Integer.valueOf(2));
+        System.out.println(vector3); // [1,6]
     }
 }
 
