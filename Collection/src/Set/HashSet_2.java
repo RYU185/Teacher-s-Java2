@@ -45,9 +45,42 @@ class C {
         return Objects.hash(data);
     }
 }
+class D {
+    int data1;
+    int data2;
+    public D(int data1, int data2) {
+        this.data1 = data1;
+        this.data2 = data2;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof D) {
+            this.data1 = ((D) obj).data1;
+            this.data2 = ((D) obj).data2;
+            return true;
+        }else {
+            return false;
+        }
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(data1,data2);
+    }
+}
 
 public class HashSet_2 {
     public static void main(String[] args) {
-
+        A a1 = new A(3);
+        A a2 = new A(3);
+        System.out.println(a1.hashCode());
+        System.out.println(a2.hashCode());
+        C c1 = new C(3);
+        C c2 = new C(3);
+        System.out.println(c1.hashCode());
+        System.out.println(c2.hashCode());
+        D d1 = new D(5,6);
+        D d2 = new D(5,6);
+        System.out.println(d1.hashCode());
+        System.out.println(d2.hashCode());
     }
 }
