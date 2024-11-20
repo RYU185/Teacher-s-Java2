@@ -10,11 +10,15 @@ public class Vector_1 {
     public static void main(String[] args) {
         List<Integer> vector1 = new Vector<>();
 
-        // #1. add
+        // #1. add 뒤에 추가
         vector1.add(3);
         vector1.add(4);
         vector1.add(5);
         System.out.println(vector1); // [3,4,5]
+        // #2. add 중간 삽입
+        vector1.add(1,6);
+        System.out.println(vector1); // [3,6,4,5]
+        
     }
 }
 
