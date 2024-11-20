@@ -30,6 +30,10 @@ public class Vector_1 {
         vector3.add(2); // [1,2]
         vector3.addAll(1, vector3);
         System.out.println(vector3); // [1,1,2,2]
+        // #5. set 수정
+        vector3.set(1,5);
+        vector3.set(3,6);
+        System.out.println(vector3); // [1,5,2,6]
     }
 }
 
