@@ -89,13 +89,17 @@ public class HashSet_2 {
         System.out.println(hset1.size()); // 2
 
         // #2. B클래스 equals만 오버라이드
+        Set<B> hset2 = new HashSet<>();
         B b1 = new B(3);
         B b2 = new B(3);
         System.out.println(b1 == b2); // false
         System.out.println(b1.equals(b2)); // true
         System.out.println(b1.hashCode()); // 1922154895
         System.out.println(b2.hashCode()); // 883049899
-
+        hset2.add(b1);
+        hset2.add(b2);
+        // equals는 true였지만 hashcode가 다르기때문에 중복 아님
+        System.out.println(hset2.size()); // 2
 
 
 
