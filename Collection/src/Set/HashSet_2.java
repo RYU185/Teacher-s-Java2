@@ -64,6 +64,9 @@ class D {
     }
     @Override
     public int hashCode() {
+        // hash메서드는 문자열이나 숫자 무엇이든 매개변수로 넣으면 함께 계산
+        // 동일한 데이터들을 매개변수로 전달하면 항상 동일한 결과를 리턴!!
+        // 이러한 hash의 특성때문에 로그인시 패스워드의 인증에 사용됨
         return Objects.hash(data1,data2);
     }
 }
