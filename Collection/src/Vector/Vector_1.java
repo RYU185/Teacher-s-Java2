@@ -24,7 +24,12 @@ public class Vector_1 {
         vector2.add(2); // [1,2]
         vector2.addAll(vector1);
         System.out.println(vector2); // [1,2,3,6,4,5]
-
+        // #4. addAll 중간에 리스트 삽입
+        List<Integer> vector3 = new Vector<>();
+        vector3.add(1);
+        vector3.add(2); // [1,2]
+        vector3.addAll(1, vector3);
+        System.out.println(vector3); // [1,1,2,2]
     }
 }
 
