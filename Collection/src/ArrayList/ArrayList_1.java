@@ -1,11 +1,11 @@
-package List;
+package ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 // 배열과 리스트의 비교
-public class List_1 {
+public class ArrayList_1 {
     public static void main(String[] args) {
         String[] array = new String[] {"A","B","C","D"};
         System.out.println(array.length); // 4

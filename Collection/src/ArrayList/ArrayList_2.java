@@ -1,11 +1,11 @@
-package List;
+package ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 // List 구현클래스의 생성 예제
-public class List_2 {
+public class ArrayList_2 {
     public static void main(String[] args) {
         // #1. 구현클래스를 이용하는 방법
         List<Integer> aList1 = new ArrayList<>();
