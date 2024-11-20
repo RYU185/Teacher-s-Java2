@@ -18,7 +18,13 @@ public class Vector_1 {
         // #2. add 중간 삽입
         vector1.add(1,6);
         System.out.println(vector1); // [3,6,4,5]
-        
+        // #3. addAll 뒤에 리스트 추가
+        List<Integer> vector2 = new Vector<>();
+        vector2.add(1);
+        vector2.add(2); // [1,2]
+        vector2.addAll(vector1);
+        System.out.println(vector2); // [1,2,3,6,4,5]
+
     }
 }
 
