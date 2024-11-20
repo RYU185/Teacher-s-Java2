@@ -23,6 +23,22 @@ class B {
 
     }
 }
+// C클래스는 equals와 hashcode를 모두 오버라이드함
+class C {
+    int data;
+    public C(int data) {
+        this.data = data;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof C) {
+            this.data = ((C) obj).data;
+            return true;
+        }else {
+            return false;
+        }
+    }
+}
 
 public class HashSet_2 {
     public static void main(String[] args) {
