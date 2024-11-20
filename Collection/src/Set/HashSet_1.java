@@ -1,5 +1,7 @@
 package Set;
 
+import javax.smartcardio.ATR;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -41,6 +43,12 @@ public class HashSet_1 {
         while(iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+        // #9. toArray
+        Object[] objects = hset3.toArray();
+        System.out.println(Arrays.toString(objects)); // [A, B, C]
+        // #10.
+        String[] strings = hset3.toArray(new String[0]);
+        System.out.println(Arrays.toString(strings)); // [A, B, C]
     }
 }
 
