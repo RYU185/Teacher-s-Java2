@@ -88,6 +88,18 @@ public class HashSet_2 {
         // a1,a2객체의 equals는 false, hashcode는 다르므로 중복아님
         System.out.println(hset1.size()); // 2
 
+        // #2. B클래스 equals만 오버라이드
+        B b1 = new B(3);
+        B b2 = new B(3);
+        System.out.println(b1 == b2); // false
+        System.out.println(b1.equals(b2)); // true
+        System.out.println(b1.hashCode()); // 1922154895
+        System.out.println(b2.hashCode()); // 883049899
+
+
+
+
+
 
 
 
