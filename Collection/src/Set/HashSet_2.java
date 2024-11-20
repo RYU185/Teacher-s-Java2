@@ -1,6 +1,8 @@
 package Set;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 // A클래스는 equals와 hashcode를 오버라이드하지 않음
 class A {
@@ -73,10 +75,24 @@ class D {
 
 public class HashSet_2 {
     public static void main(String[] args) {
+        // #1. A클래스 오버라이드 안함
+        Set<A> hset1 = new HashSet<>();
         A a1 = new A(3);
         A a2 = new A(3);
-        System.out.println(a1.hashCode());
-        System.out.println(a2.hashCode());
+        System.out.println(a1 == a2); // false
+        System.out.println(a1.equals(a2)); // false
+        System.out.println(a1.hashCode()); // 793589513
+        System.out.println(a2.hashCode()); // 1313922862
+        hset1.add(a1);
+        hset1.add(a2);
+        // a1,a2객체의 equals는 false, hashcode는 다르므로 중복아님
+        System.out.println(hset1.size()); // 2
+
+
+
+
+
+
         C c1 = new C(3);
         C c2 = new C(3);
         System.out.println(c1.hashCode());
