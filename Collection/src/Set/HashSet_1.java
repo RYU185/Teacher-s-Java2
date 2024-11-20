@@ -20,7 +20,7 @@ public class HashSet_1 {
         System.out.println(hset2); // [A, B, C, D] 랜덤출력, 중복저장X
         // #3. remove
         hset2.remove("B");
-        System.out.println(hset2); // [A, C, D]
+        System.out.println(hset2); // [A, C, D] 랜덤출력
         // #4. clear
         hset2.clear();
         System.out.println(hset2); // []
