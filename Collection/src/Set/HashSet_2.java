@@ -101,18 +101,22 @@ public class HashSet_2 {
         // equals는 true였지만 hashcode가 다르기때문에 중복 아님
         System.out.println(hset2.size()); // 2
 
-
-
-
-
-
-
-
-
+        // #3. C클래스 equals와 hashcode 오버라이드
+        Set<C> hset3 = new HashSet<>();
         C c1 = new C(3);
         C c2 = new C(3);
-        System.out.println(c1.hashCode());
-        System.out.println(c2.hashCode());
+        System.out.println(c1 == c2); // false
+        System.out.println(c1.equals(c2)); // true
+        System.out.println(c1.hashCode()); // 34
+        System.out.println(c2.hashCode()); // 34
+        hset3.add(c1);
+        hset3.add(c2);
+        // hashcode와 equals가 둘 다 동일하다고 판단해야 중복객체로 판정됨
+        System.out.println(hset3.size()); // 1
+
+
+
+
         D d1 = new D(5,6);
         D d2 = new D(5,6);
         System.out.println(d1.hashCode());
