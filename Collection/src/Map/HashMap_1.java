@@ -12,7 +12,7 @@ public class HashMap_1 {
         hMap1.put(2, "나다라");
         hMap1.put(1, "가나다");
         hMap1.put(3, "다라마");
-        hMap1.put(3, "가나다");
+        //hMap1.put(3, "가나다");
         // key는 중복허용X, value는 중복허용
         // value는 나중에 쓰는 값으로 덮어씀
         System.out.println(hMap1.toString()); //{1=가나다, 2=나다라, 3=다라마}
@@ -22,17 +22,22 @@ public class HashMap_1 {
         hMap2.putAll(hMap1);
         System.out.println(hMap2.toString()); //{1=가나다, 2=나다라, 3=다라마}
 
-        //#3. replace(K key, V value)
+        //#3. replace(K key, V value) 업데이트
+        // 키가 존재하면 업데이트하고 없음 아무 동작하지 않음
         hMap2.replace(1, "가가가");
         hMap2.replace(4, "라라라"); //동작안함
         System.out.println(hMap2.toString()); //{1=가가가, 2=나다라, 3=다라마}
 
         //#4. replace(K key, V oldValue, V newValue)
+        // oldValue가 정확히 일치하는 경우에만 업데이트 수행
         hMap2.replace(1, "가가가", "나나나");
         hMap2.replace(2, "다다다", "라라라"); //동작안함
         System.out.println(hMap2.toString()); //{1=나나나, 2=나다라, 3=다라마}
 
         //#5. V get(Object key)
+        // HashMap은 순서가 없으므로 인덱스로 찾을 수 없음
+        // *** <중요> 대신 key를 이용해서 해당 value를 읽는다!!! ***
+        // 아래 숫자는 인덱스 아니고 key
         System.out.println(hMap2.get(1)); //나나나
         System.out.println(hMap2.get(2)); //나다라
         System.out.println(hMap2.get(3)); //다라마
