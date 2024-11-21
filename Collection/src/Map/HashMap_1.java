@@ -1,6 +1,7 @@
 package Map;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
@@ -94,6 +95,14 @@ public class HashMap_1 {
             Integer key = entry.getKey();
             String value = entry.getValue();
             System.out.println(key + " = " + value);
+        }
+        // 패턴3) Iterator를 이용하는 방법
+        Iterator<Map.Entry<Integer,String>> iterator =
+                map.entrySet().iterator();
+        while(iterator.hasNext()) {
+            Map.Entry<Integer,String> entry = iterator.next();
+            System.out.println(entry.getKey() + " = " +
+                    entry.getValue());
         }
     }
 }
