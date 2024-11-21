@@ -65,6 +65,14 @@ public class TreeSet_1 {
         nSet = treeSet.tailSet(20, false);
         // false이기때문에 조건을 포함하지 않음!
         System.out.println(nSet); // [22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
+
+        // #11. subSet 특정조건사이의 Set을 읽음
+        sSet = treeSet.subSet(10,20);
+        // SortedSet의 경우, 앞은 포함O, 뒤는 포함X
+        System.out.println(sSet); // [10, 12, 14, 16, 18]
+        nSet = treeSet.subSet(10,false, 20, true);
+        // false-true로 전달했으므로 10은 포함X, 20은 포함O
+        System.out.println(nSet); // [12, 14, 16, 18, 20]
     }
 }
 
