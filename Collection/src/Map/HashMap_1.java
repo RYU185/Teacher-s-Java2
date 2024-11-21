@@ -78,5 +78,25 @@ public class HashMap_1 {
         //#13. clear()
         hMap2.clear();
         System.out.println(hMap2.toString()); //{}
+
+        // HashMap에서 반복문을 사용하는 패턴
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Apple");
+        map.put(2, "Banana");
+        map.put(3, "Cherry");
+        // 패턴1) keySet()을 이용하는 방법
+        for (Integer k : map.keySet()) { // For-Each 반복문이라고 부르기도함
+            String value = map.get(k);
+            System.out.println(k + " = " + value);
+        }
     }
 }
+
+
+
+
+
+
+
+
+
