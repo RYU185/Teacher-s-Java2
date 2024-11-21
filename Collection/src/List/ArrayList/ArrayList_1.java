@@ -1,4 +1,4 @@
-package ArrayList;
+package List.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ public class ArrayList_1 {
 
         // List
         // List는 인터페이스이므로 객체생성시 구현클래스가 필요함
-        // 가장 유명한 List의 구현클래스는 ArrayList !!
+        // 가장 유명한 List의 구현클래스는 List.ArrayList !!
         List<String> aList = new ArrayList<>();
         System.out.println(aList.size()); // 0 (empty 비어있음)
         aList.add("A");

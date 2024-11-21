@@ -1,4 +1,4 @@
-package ArrayList;
+package List.ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ public class ArrayList_2 {
         // #1. 구현클래스를 이용하는 방법
         List<Integer> aList1 = new ArrayList<>();
         List<Integer> aList2 = new ArrayList<>(30);
-        // ArrayList 내부적으로 메모리용량을 미리 예약해두는 개념이며
+        // List.ArrayList 내부적으로 메모리용량을 미리 예약해두는 개념이며
         // 실제 size는 아님!!
         System.out.println(aList2.size()); // 0
 
