@@ -19,7 +19,8 @@ class MyComparableClass implements Comparable<MyComparableClass>{
         this.data2=data2;
     }
     @Override
-    public int compareTo(MyComparableClass o) { //크기비교의 기준을 여기서 설정 (음수, 0, 양수)
+    public int compareTo(MyComparableClass o) {
+        //크기비교의 기준을 여기서 설정 (음수, 0, 양수)
         if(this.data1<o.data1) return -1;
         else if(this.data1 == o.data1) return 0;
         else return 1;
@@ -33,7 +34,7 @@ public class TreeSet_2 {
         Integer intValue2 = Integer.valueOf(10);
         treeSet1.add(intValue1);
         treeSet1.add(intValue2);
-        System.out.println(treeSet1.toString());
+        System.out.println(treeSet1.toString()); // [10, 20] 정렬됨
 
         //#2. String 크기 비교
         TreeSet<String> treeSet2 = new TreeSet<String>();
@@ -41,7 +42,7 @@ public class TreeSet_2 {
         String str2 = "다라";
         treeSet2.add(str1);
         treeSet2.add(str2);
-        System.out.println(treeSet2.toString());
+        System.out.println(treeSet2.toString()); // [가나, 다라]
 
         //#3. MyComparableClass 객체 크기 비교 방법#1
         // Comparable인터페이스의 compareTo()를 오버라이드

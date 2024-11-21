@@ -6,12 +6,15 @@ import java.util.Set;
 
 public class HashMap_1 {
     public static void main(String[] args) {
-        Map<Integer, String> hMap1 =  new HashMap<Integer, String>();
+        Map<Integer, String> hMap1 =  new HashMap<>();
 
         //#1. put (K key, V value)
         hMap1.put(2, "나다라");
         hMap1.put(1, "가나다");
         hMap1.put(3, "다라마");
+        hMap1.put(3, "가나다");
+        // key는 중복허용X, value는 중복허용
+        // value는 나중에 쓰는 값으로 덮어씀
         System.out.println(hMap1.toString()); //{1=가나다, 2=나다라, 3=다라마}
 
         //#2. putAll(다른 맵객체)
