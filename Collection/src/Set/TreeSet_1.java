@@ -23,9 +23,16 @@ public class TreeSet_1 {
         // #5. floor 매개변수보다 <=(작거나 같은) 데이터 읽기
         System.out.println(treeSet.floor(25)); // 24
         System.out.println(treeSet.floor(26)); // 26
-        // #6. ceiling 매갭변수보다 >=(크거나 같은) 데이터 읽기
+        // #6. ceiling 매개변수보다 >=(크거나 같은) 데이터 읽기
         System.out.println(treeSet.ceiling(25)); // 26
         System.out.println(treeSet.ceiling(26)); // 26
+
+        //  #7. pollFirst 첫번째 데이터를 꺼냄
+        System.out.println(treeSet.size()); // 25
+        for (int i=0; i<treeSet.size(); i++) {
+            System.out.println(treeSet.pollFirst());
+        }
+        System.out.println(treeSet.size()); // 
     }
 }
 
