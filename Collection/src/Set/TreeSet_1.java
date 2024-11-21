@@ -57,6 +57,7 @@ public class TreeSet_1 {
         // NavigableSet으로 타입변환하면 조건의 포함여부를 선택할 수 있음
         // true는 포함O, false는 포함X
         NavigableSet<Integer> nSet = treeSet.headSet(20, true);
+        System.out.println(nSet); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
     }
 }
 
