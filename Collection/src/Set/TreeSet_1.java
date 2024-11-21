@@ -31,9 +31,10 @@ public class TreeSet_1 {
         int size = treeSet.size();
         System.out.println(size); // 25
         for (int i=0; i<size; i++) {
-            System.out.println(treeSet.pollFirst());
+            // 25번 treeSet에서 데이터를 꺼냄
+            System.out.println(treeSet.pollFirst()); // 2,4,6,8.....
         }
-        System.out.println(treeSet.size()); //
+        System.out.println(treeSet.size()); // 0
     }
 }
 
