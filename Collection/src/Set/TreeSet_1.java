@@ -28,11 +28,12 @@ public class TreeSet_1 {
         System.out.println(treeSet.ceiling(26)); // 26
 
         //  #7. pollFirst 첫번째 데이터를 꺼냄
-        System.out.println(treeSet.size()); // 25
-        for (int i=0; i<treeSet.size(); i++) {
+        int size = treeSet.size();
+        System.out.println(size); // 25
+        for (int i=0; i<size; i++) {
             System.out.println(treeSet.pollFirst());
         }
-        System.out.println(treeSet.size()); // 
+        System.out.println(treeSet.size()); //
     }
 }
 
