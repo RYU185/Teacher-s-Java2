@@ -58,6 +58,13 @@ public class TreeSet_1 {
         // true는 포함O, false는 포함X
         NavigableSet<Integer> nSet = treeSet.headSet(20, true);
         System.out.println(nSet); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+        // #10. tailSet 특정조건을 기준으로 뒷부분 Set을 읽음
+        sSet = treeSet.tailSet(20); // 포함O
+        System.out.println(sSet); // [20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
+        nSet = treeSet.tailSet(20, false);
+        // false이기때문에 조건을 포함하지 않음!
+        System.out.println(nSet); // [22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
     }
 }
 
