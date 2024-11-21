@@ -51,10 +51,14 @@ public class HashMap_1 {
         System.out.println(hMap2.containsValue("다다다")); //false
 
         //#8. Set<K> keySet()
+        // keySet은 key의 정보만 모아서 Set에 담아 리턴
         Set<Integer> keySet = hMap2.keySet();
         System.out.println(keySet.toString()); //[1, 2, 3]
 
         //#9. Set<Map.Entry<K,V>> entrySet()
+        // Map.Entry는 Map의 이너인터페이스
+        // entrySet()는 key와 value를 쌍으로 묶어서 Set에 담아 리턴
+        // 반복문에 주로 사용됨!!!
         Set<Map.Entry<Integer,String>> entrySet = hMap2.entrySet();
         System.out.println(entrySet.toString()); //[1=나나나, 2=나다라, 3=다라마]
 
