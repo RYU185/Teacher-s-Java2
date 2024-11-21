@@ -35,6 +35,15 @@ public class TreeSet_1 {
             System.out.println(treeSet.pollFirst()); // 2,4,6,8.....
         }
         System.out.println(treeSet.size()); // 0
+        // #8. pollLast 마지막 데이터를 꺼냄
+        for (int i=50; i>0; i-=2) {
+            treeSet.add(i);
+        }
+        size = treeSet.size(); // 25
+        for (int i=0; i<size; i++) {
+            System.out.println(treeSet.pollLast()); // 50, 48, 46...
+        }
+        System.out.println(treeSet.size()); // 0
     }
 }
 
