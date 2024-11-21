@@ -89,6 +89,12 @@ public class HashMap_1 {
             String value = map.get(k);
             System.out.println(k + " = " + value);
         }
+        // 패턴2) entrySet()을 이용하는 방법
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            Integer key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key + " = " + value);
+        }
     }
 }
 
