@@ -1,5 +1,7 @@
 package Set;
 
+import java.util.NavigableSet;
+import java.util.SortedSet;
 import java.util.TreeSet;
 
 public class TreeSet_1 {
@@ -44,6 +46,17 @@ public class TreeSet_1 {
             System.out.println(treeSet.pollLast()); // 50, 48, 46...
         }
         System.out.println(treeSet.size()); // 0
+
+        // Set으로부터 특정조건의 Set을 얻는 메서드
+        for (int i=50; i>0; i-=2) {
+            treeSet.add(i);
+        }
+        // #9. headSet 특정조건을 기준으로 앞부분 Set을 읽음
+        SortedSet<Integer> sSet = treeSet.headSet(20); // 포함X
+        System.out.println(sSet); // [2, 4, 6, 8, 10, 12, 14, 16, 18]
+        // NavigableSet으로 타입변환하면 조건의 포함여부를 선택할 수 있음
+        // true는 포함O, false는 포함X
+        NavigableSet<Integer> nSet = treeSet.headSet(20, true);
     }
 }
 
