@@ -8,6 +8,7 @@ import java.util.Queue;
 // 주로 키입력등의 이벤트처리에 사용됨
 // 먼저 들어온 객체정보를 먼저 사용함
 // 구현체로는 LinkedList 또는 PriorityQueue를 많이 사용
+// PriorityQueue는 들어온 순서가 아니라 그 일의 우선순위에 따라 처리하는 방식
 // LinkedList의 노드연결방식이 큐의 특징인 잦은 삽입과 삭제의 처리에 적합하기 때문!!
 public class Queue_1 {
     public static void main(String[] args) {
