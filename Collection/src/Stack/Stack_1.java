@@ -23,6 +23,13 @@ public class Stack_1 {
         System.out.println(stack.search(5)); // 3
         System.out.println(stack.search(2)); // 4
         System.out.println(stack.search(9)); // -1 (없는 경우)
+        // #4. pop (꺼내고 삭제)
+        System.out.println(stack.pop()); // 7
+        System.out.println(stack.pop()); // 3
+        System.out.println(stack.pop()); // 5
+        System.out.println(stack.pop()); // 2
+
+        System.out.println(stack.size()); // 0
     }
 }
 
