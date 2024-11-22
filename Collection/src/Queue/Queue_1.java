@@ -13,16 +13,21 @@ public class Queue_1 {
     public static void main(String[] args) {
         // 예외처리없는 메서드 (안전장치가 없으므로 조심해서 사용)
         Queue<Integer> q1 = new LinkedList<>();
+        // #1. add 추가 (큐의 사이즈가 다 차서 더이상 추가할 수 없으면 에러발생)
         q1.add(3);
         q1.add(4);
         q1.add(5);
-        // #1. element 읽기 (삭제X)
+        // #2. element 읽기 (삭제X)
         System.out.println(q1.element()); // 3
-        // #2. remove 삭제 (꺼내면서 삭제)
+        // #3. remove 삭제 (꺼내면서 삭제)
         System.out.println(q1.remove()); // 3
         System.out.println(q1.remove()); // 4
         System.out.println(q1.remove()); // 5
-        System.out.println(q1.remove()); // 
+        // System.out.println(q1.remove()); // 오류 (큐가 비었음)
+
+        // 예외처리있는 메서드 (안전장치)
+        Queue<Integer> q2 = new LinkedList<>();
+        //
     }
 }
 
