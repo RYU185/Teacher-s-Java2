@@ -1,5 +1,6 @@
 package Queue;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 // 큐 (Queue) 인터페이스
@@ -11,7 +12,17 @@ import java.util.Queue;
 public class Queue_1 {
     public static void main(String[] args) {
         // 예외처리없는 메서드 (안전장치가 없으므로 조심해서 사용)
-        Queue<Integer> q1 =
+        Queue<Integer> q1 = new LinkedList<>();
+        q1.add(3);
+        q1.add(4);
+        q1.add(5);
+        // #1. element 읽기 (삭제X)
+        System.out.println(q1.element()); // 3
+        // #2. remove 삭제 (꺼내면서 삭제)
+        System.out.println(q1.remove()); // 3
+        System.out.println(q1.remove()); // 4
+        System.out.println(q1.remove()); // 5
+        System.out.println(q1.remove()); // 
     }
 }
 
