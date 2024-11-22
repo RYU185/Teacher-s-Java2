@@ -27,7 +27,17 @@ public class Queue_1 {
 
         // 예외처리있는 메서드 (안전장치)
         Queue<Integer> q2 = new LinkedList<>();
-        //
+        // #4. offer 추가 (큐의 크기가 다 차도 에러가 발생하지않고 추가안함)
+        q2.offer(3);
+        q2.offer(4);
+        q2.offer(5);
+        // #5. peek 읽기
+        System.out.println(q2.peek()); // 3
+        // #6. poll 꺼내면서 지우기
+        System.out.println(q2.poll()); // 3
+        System.out.println(q2.poll()); // 4
+        System.out.println(q2.poll()); // 5
+        System.out.println(q2.poll()); // null (에러발생안함)
     }
 }
 
