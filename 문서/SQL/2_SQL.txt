@@ -5,12 +5,19 @@ SQL (Structured Query Language)
 1. 기본적인 역할 (CRUD)
 - 데이터 조회하기
 "학생 테이블에서 모든 학생 이름을 보여주세요"
+select name from students;
+
 - 데이터 추가하기
 "새로운 학생 정보를 보내줄테니 저장해주세요"
+insert into students (name, age) values ('Alica', 20);
+
 - 데이터 수정하기
 "학생의 나이를 21살로 바꿔주세요"
+update students set age = 21 where name 'Alice';
+
 - 데이터 삭제하기
 "졸업한 학생 데이터를 삭제해주세요"
+delete from students where name = 'Alice';
 
 2. SQL의 특징
 - 쉽고 직관적임 
