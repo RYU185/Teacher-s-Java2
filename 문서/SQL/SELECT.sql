@@ -77,6 +77,8 @@ where 도시 like '대전%';
 select * from 고객
 where 도시 like '%광역시';
 select * from 고객
+where 도시 not like '%광역시';
+select * from 고객
 where 주소 like '%대치동%';
 select * from 고객
 where 전화번호 like '%1431';
