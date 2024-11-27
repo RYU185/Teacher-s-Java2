@@ -35,11 +35,19 @@ select substring_index(substring_index('서울시 동작구 흑석동', ' ', 2),
 -- ltrim 왼쪽공백 제거
 -- rtrim 오른쪽공백 제거
 -- trim 양쪽공백 제거
-select ltrim('    sql'), rtrim('sql    '), trim('   sql   '); 
+select ltrim('    sql'), rtrim('sql    '), trim('   s q l   '); 
 
+-- lpad 채우기, 지정한 길이내에서 문자열을 제외한 나머지를 주어진 문자로 왼쪽부터 채움
+-- rpad
+select lpad('sql', 10, '#'), rpad('sql', 5, '*'); 
 
-
-
+-- field 문자열의 위치를 찾음
+-- field(찾는문자열, 문자열1, 문자열2, 문자열3, ......)
+-- find_in_set 문자열 리스트에서 지정한 문자열을 찾음
+-- find_in_set(찾는 문자열, 문자열리스트)
+select field('java', 'sql', 'java', 'javascript'); -- 2 
+select find_in_set('java', 'sql,java,javascript'); -- 2
+ 
 
 
 
