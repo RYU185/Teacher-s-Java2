@@ -73,7 +73,7 @@ where 도시 = '대전광역시';
 select * from 제품
 where (단가 between 5000 and 10000) and (제품명 like '%주스%');
 
-
+-- 17.
 
 
 
