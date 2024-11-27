@@ -20,9 +20,17 @@ select left('SQL 공부', 3),
 		right('SQL 공부', 2),
 		substr('SQL 공부', 3, 4),
 		substr('SQL 공부', 5); 
-
-
-
+	
+-- substring_index 
+-- 구분자를 만날때까지 문자열을 잘라냄. 인덱스는 몇번째 구분자를 만날때까지 자를지 결정
+-- 만약 인덱스가 음수값이면 오른쪽에서 자름
+select substring_index('서울시 동작구 흑석동', ' ', 1); -- 서울시
+select substring_index('서울시 동작구 흑석동', ' ', 2); -- 서울시 동작구
+select substring_index('서울시 동작구 흑석동', ' ', -1); -- 흑석동
+select substring_index('서울시 동작구 흑석동', ' ', -2); -- 동작구 흑석동
+-- 동작구만 자르고 싶으면????
+-- '서울시 동작구'만 자른 다음에 -1 인덱스를 사용하여 오른쪽에서 자름
+select substring_index(substring_index('서울시 동작구 흑석동', ' ', 2), ' ', -1); 
 
 
 
