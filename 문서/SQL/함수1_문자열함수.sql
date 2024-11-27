@@ -48,6 +48,30 @@ select lpad('sql', 10, '#'), rpad('sql', 5, '*');
 select field('java', 'sql', 'java', 'javascript'); -- 2 
 select find_in_set('java', 'sql,java,javascript'); -- 2
  
+-- locate 기준문자열에서 부분문자열의 위치를 찾음
+-- locate(부분문자열, 기준문자열)
+select locate('world', 'hello world'); -- 7
+select locate('hi', 'hello world'); -- 0
+
+-- elt 지정한 위치에 있는 문자열을 반환
+select elt(2, 'sql', 'java', 'javascript'); -- java 
+
+-- repeat 문자열의 반복
+select repeat('*', 5);
+
+-- replace 문자열의 일부를 다른 문자열로 대체
+-- replace(대상문자열, 바꿀문자열, 바뀔문자열)
+select replace('010 1234 5678', ' ', '-');
+select replace('2024/11/27', '/', '.');
+
+-- reverse 문자열 거꾸로 바꿈
+select reverse('hello'); 
+
+
+
+
+
+
 
 
 
