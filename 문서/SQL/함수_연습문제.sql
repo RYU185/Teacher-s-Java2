@@ -55,7 +55,8 @@ from 사원;
 select *,
 	datediff(발송일, 요청일) as 지연일수
 from 주문
-where (                          ); 
+where datediff(발송일, 요청일) >= 7
+order by 지연일수 desc; 
 
 /*8. 고객테이블에서 아래와 같은 컬럼을 만드시오. 단, 도시구분과 마일리지구분
 컬럼의 조건은 아래 조건을 따르시오
@@ -66,28 +67,27 @@ where (                          );
 select 담당자명,
 	고객회사명,
 	도시,
-	if((                             ),
+	if(도시 like '%특별시%' or 도시 like '%광역시%',
 		'대도시', '도시') as 도시구분,
 	마일리지,
-	case when (           ) then (        )
-		when (          ) then (       )
+	case when 마일리지 >= 100000 then 'VVIP'
+		when 마일리지 >= 10000 then 'VIP'
 		else '일반고객'
 	end as 마일리지구분
 from 고객;
 
 
 /*9. 주문테이블에서 아래 컬럼을 만드시오
-주문번호, 고객번호, 주문일, 주문년도, 주문분기, 주문월, 주문일, 주문요일, 
+주문번호, 고객번호, 주문일, 주문년도, 주문분기, 주문월, 주문일(날짜만 표시), 주문요일, 
 한글요일
-조건1 : 한글요일은 case문을 이용하여 정수값을 '월요일'같은 한글 요일표시로 
-표현 */
+조건1 : 한글요일은 case문을 이용하여 정수값을 '월요일'같은 한글 요일표시로 표현 */
 select 주문번호, 고객번호, 주문일,
-	(            ) as 주문년도,
-	(            ) as 주문분기,
-	(            ) as 주문월,
-	(            ) as 주문일,
-	(            ) as 주문요일, 
-	case (            ) when 0 then '월요일'
+	year(주문일) as 주문년도,
+	quarter(주문일) as 주문분기,
+	month(주문일) as 주문월,
+	day(주문일) as 주문일,
+	weekday(주문일) as 주문요일, 
+	case weekday(주문일) when 0 then '월요일'
 						when 1 then '화요일'
 						when 2 then '수요일'
 						when 3 then '목요일'
@@ -95,4 +95,9 @@ select 주문번호, 고객번호, 주문일,
 						when 5 then '토요일'
 						when 6 then '일요일'
 	end as 한글요일
-from 주문
+from 주문;
+
+
+
+
+
