@@ -13,6 +13,36 @@ from 고객;
 select sum(마일리지), avg(마일리지), min(마일리지), max(마일리지)
 from 고객;
 
+-- group by 그룹별로 묶어주는 명령어
+select 도시, count(*) as 고객수, avg(마일리지) as 평균마일리지
+from 고객
+group by 도시;
+
+select 담당자직위, 도시, count(*) as 고객수, avg(마일리지) as 평균마일리지
+from 고객
+group by 담당자직위, 도시
+order by 담당자직위, 도시;
+
+-- 고객별 주문수
+select 고객번호, count(주문번호) as 주문수
+from 주문
+group by 고객번호;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

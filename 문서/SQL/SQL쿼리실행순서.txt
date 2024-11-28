@@ -1,9 +1,12 @@
-<쿼리실행(완료)순서>
+<MySQL의 쿼리 실행 순서>
 1. from 어느테이블에서 정보를 가져올지 결정
 2. where 어떤 정보를 가져올지 결정(조건)
 3. group by 그룹화
 4. select 원하는 컬럼(열)을 추출, 생성 - 별칭 생성
 5. having 그룹에 조건을 적용
+  : 논리적으로는 select 이전에 수행되는 것이 맞음
+  : MySQL은 select 이후에 수행되어 별칭 사용 가능
+  : Oracle은 having에서 별칭 사용 불가
 6. order by 정렬
 7. limit 개수 정렬
 
