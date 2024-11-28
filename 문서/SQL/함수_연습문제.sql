@@ -48,7 +48,7 @@ select 이름,
 	입사일,
 	timestampdiff(day, 입사일, now()) as 입사일수,
 	adddate(입사일, 500) as 입사500일후
-from 사원
+from 사원;
 
 
 /*7. 주문테이블에서 요청일보다 발송일이 7일 이상 늦은 주문내역 */
