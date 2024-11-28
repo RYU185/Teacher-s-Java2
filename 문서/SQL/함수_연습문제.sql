@@ -2,22 +2,22 @@ use testdb;
 
 /*1. 2020년 2사분기의 주문내역을 보이시오 */
 select * from 주문
-where (              ) = 2020 and (              ) = 2; 
+where year(주문일) = 2020 and quarter(주문일) = 2; 
 
 
 /*2. 제품번호, 제품명, 재고, 재고구분을 보이시오
 재고구분: 재고가 100개 이상이면 '과다재고', 10개이상이면 '적정', 나머지는 '재고부족' */
 select 제품번호, 제품명, 재고, 
-case (             ) then (             )
-	(             ) then (             )
-	else (             )
+case when 재고 >= 100 then '과다재고'
+	when 재고 >= 10 then '적정'
+	else '재고부족'
 	end as 재고구분 
 from 제품;
 
 
 /*3. 입사한지 40개월이 지난 사원을 보이시오 */
 select * from 사원
-where (                      ) > 40; 
+where timestampdiff(month, now(), 입사일) > 40; 
 
 
 /*4. 고객테이블에서 고객회사명과 전화번호를 아래 규칙에 따르도록 변경하고 변경된 컬럼
@@ -25,9 +25,9 @@ where (                      ) > 40;
 고객회사명2의 조건 : 기존 고객회사명의 앞 2자리를 *로 변환
 전화번호2의 조건 : (02)978-1984의 형태를 02-978-1984로 변환 */
 select 고객회사명, 
-	concat('**',                ) as 고객회사명2,
+	concat('**', substring(고객회사명, 3)) as 고객회사명2,
 	전화번호,
-	replace(              , ')', '-') as 전화번호2
+	replace(substring(전화번호,2), ')', '-') as 전화번호2
 from 고객
 
 
