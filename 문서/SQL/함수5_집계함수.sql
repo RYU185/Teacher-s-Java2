@@ -32,8 +32,8 @@ group by 고객번호;
 select 도시, count(*) as 고객수, avg(마일리지) as 평균마일리지
 from 고객
 group by 도시
-having 고객수 >= 4; -- MySQL
--- having count(*) >= 4; -- Oracle
+having 고객수 >= 4; -- MySQL만 가능
+-- having count(*) >= 4; -- 표준 SQL에서는 이렇게 사용해야 함!! **
 
 
 
