@@ -28,6 +28,12 @@ select 고객번호, count(주문번호) as 주문수
 from 주문
 group by 고객번호;
 
+-- having 그룹별 조건
+select 도시, count(*) as 고객수, avg(마일리지) as 평균마일리지
+from 고객
+group by 도시
+-- having 고객수 >= 4; -- MySQL
+having count(*) >= 4; -- Oracle
 
 
 
