@@ -54,9 +54,40 @@ order by 주문번호;
 
 
 /* 7. 2021년 주문내역에 대하여 고객번호별로 주문건수를 보이되, 주문건수가 많은 상위 3건의 고객 출력 */
+select 고객번호, count(*) as 주문건수
+from 주문
+where 주문일 between '2021-01-01' and '2021-12-31'
+group by 고객번호
+order by 주문건수 desc 
+limit 3;
 
 
 /* 8. 직위별로 사원수와 사원이름목록을 출력 */
+select 직위, 이름, count(*) as 사원수
+from 사원
+group by 직위, 이름
+order by 직위, 이름;
+-- group_concat 사용예
+select 직위, group_concat(이름 order by 이름) as 사원이름목록 , count(*) as 사원수
+from 사원
+group by 직위
+order by 직위;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
