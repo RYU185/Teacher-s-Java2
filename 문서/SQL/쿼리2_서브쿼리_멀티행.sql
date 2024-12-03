@@ -12,12 +12,15 @@ select count(*) as 주문건수
 from 주문
 where 고객번호 in (select 고객번호 from 고객 where 도시 = '부산광역시');
 
--- #2. ANY
+-- #2. ANY, SOME
 -- 부산광역시 전체고객의 마일리지보다 마일리지가 큰 고객의 정보
 -- 서브쿼리의 결과값중 어느 하나보다만 크면 선택(즉, 최소값보다 크면 선택)
 select 담당자명, 고객회사명, 마일리지
 from 고객
 where 마일리지 > any (select 마일리지 from 고객 where 도시 = '부산광역시');
+select 담당자명, 고객회사명, 마일리지
+from 고객
+where 마일리지 > some (select 마일리지 from 고객 where 도시 = '부산광역시');
 
 -- #3. ALL
 -- 각 지역의 어느 평균 마일리지보다도 마일리지가 큰 고객의 정보
