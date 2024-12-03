@@ -28,7 +28,15 @@ where 마일리지 > all (select avg(마일리지) from 고객 group by 지역);
 
 -- #4. EXISTS
 -- 한번이라도 주문한적이 있는 고객의 정보
+select 고객번호, 고객회사명
+from 고객
+where exists (select * from 주문 where 고객.고객번호 = 주문.고객번호);
 
+-- in 연산자를 이용하여 동일한 결과를 얻을 수 있음
+select 고객번호, 고객회사명
+from 고객
+where 고객번호 in (select distinct 고객번호 from 주문);
+-- distinct가 없어도 동일한 결과가 나오지만 중복비교를 하게되므로 사용하는것이 좋음
 
 
 
