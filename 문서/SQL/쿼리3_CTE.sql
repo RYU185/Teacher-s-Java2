@@ -53,6 +53,7 @@ from 고객;
 
 -- 위 서브쿼리의 중복을 CTE로 해결할 수 있으나, 
 -- mysql은 with절(CTE)를 여러 select절이 공유할 수 있는 방법이 없는듯 함(?)
+-- with절이 바로 아래에 있는 select절에만 적용됨
 with 주문총액 as (
 	select 주문.고객번호, sum(단가*주문수량) as 총주문액
 	from 주문
