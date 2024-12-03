@@ -50,6 +50,8 @@ group by 도시;
 
 -- #3. select절
 -- 고객번호, 담당자명, 고객의 최종주문일 조회
+-- 하나의 컬럼 값만 반환하는 서브쿼리를 스칼라 서브쿼리(Scalar SubQuery)라고 부름
+-- select절에 사용되는 서브쿼리는 모두 스칼라 서브쿼리!
 select 고객번호, 담당자명, 
 	(select max(주문일) from 주문 where 주문.고객번호 = 고객.고객번호) as 최종주문일
 from 고객;
@@ -69,6 +71,14 @@ from 고객
 left outer join 주문
 on 고객.고객번호 = 주문.고객번호
 group by 고객.고객번호, 담당자명;
+
+
+-- Having절에도 서브쿼리를 사용할 수 있음. 단, 사용원리가 where절과 유사하므로 따로 다루지 않음
+-- 고객 전체의 평균마일리지보다 평균마일리지가 큰 도시
+select 도시, avg(마일리지) as 평균마일리지
+from 고객
+group by 도시
+having avg(마일리지) > (select avg(마일리지) from 고객); 
 
 
 
