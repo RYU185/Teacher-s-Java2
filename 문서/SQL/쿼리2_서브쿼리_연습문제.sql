@@ -27,9 +27,17 @@ where 사원번호 in (select 사원번호 from 주문
 
 
 -- 5. 고객별 주문수를 계산하여 고객회사명, 주문수 조회
+select 고객회사명, (
+	select count(*) from 주문 where 고객.고객번호 = 주문.고객번호
+) as 주문수
+from 고객;
 
 
 -- 6. 제품명, 제품별 총주문수량을 조회
+select 제품명, (
+	select sum(주문수량) from 주문세부 where 주문세부.제품번호 = 제품.제품번호
+) as 총주문수량
+from 제품;
 
 
 -- 7. 제품테이블에 있는 제품 중 단가가 가장 높은 제품명
