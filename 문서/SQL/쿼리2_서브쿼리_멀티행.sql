@@ -19,9 +19,15 @@ select 담당자명, 고객회사명, 마일리지
 from 고객
 where 마일리지 > any (select 마일리지 from 고객 where 도시 = '부산광역시');
 
+-- #3. ALL
+-- 각 지역의 어느 평균 마일리지보다도 마일리지가 큰 고객의 정보
+-- 서브쿼리의 결과값 중 최대값보다 크면 선택
+select 담당자명, 고객회사명, 마일리지
+from 고객
+where 마일리지 > all (select avg(마일리지) from 고객 group by 지역);
 
-
-
+-- #4. EXISTS
+-- 한번이라도 주문한적이 있는 고객의 정보
 
 
 
