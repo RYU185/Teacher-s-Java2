@@ -66,6 +66,16 @@ alter table 학생 change column 연락처 핸드폰전화번호 varchar(20);
 -- 컬럼 삭제
 alter table 학생 drop column 성별;
 
+-- 테이블명 변경
+alter table 학생 rename 재학생;
+
+-- 3. drop
+create database temp;
+drop database temp;
+
+create table temp(item varchar(10));
+drop table temp;
+
 
 
 
