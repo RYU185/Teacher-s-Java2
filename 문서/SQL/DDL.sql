@@ -60,9 +60,11 @@ alter table 학생 add 성별 char(1);
 -- 컬럼 데이터타입 변경
 alter table 학생 modify column 성별 varchar(20);
 
+-- 컬럼명 변경
+alter table 학생 change column 연락처 핸드폰전화번호 varchar(20);
 
-
-
+-- 컬럼 삭제
+alter table 학생 drop column 성별;
 
 
 
