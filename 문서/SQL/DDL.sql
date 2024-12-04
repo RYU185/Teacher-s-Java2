@@ -1,7 +1,5 @@
 -- DDL.sql
 
-use testdb;
-
 /* 데이터베이스에서 사용되는 데이터타입
 1. 문자형 데이터타입 (단위는 바이트)
 char 고정길이 255
@@ -34,6 +32,13 @@ blob 65535
 mediumblob 16,777,215
 longblob 4,294,967,295 (4기가)
 */ 
+
+-- 1. create 데이터베이스 생성
+create database testtest
+	char set utf8mb4 collate utf8mb4_general_ci;
+
+use testtest;
+create table 학과 (학과번호 char(2), 학과명 varchar(20), 학과장명 varchar(20));
 
 
 
