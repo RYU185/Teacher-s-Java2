@@ -33,10 +33,16 @@ delete from students where name = 'Alice';
 - truncate : 테이블의 모든 데이터를 삭제하지만 구조는 유지
 
 2) DML (Data Manipulation Language) 데이터 조작어
-- select, insert, update, delete
+: 데이터 행(row)을 조작, 삽입, 업데이트, 삭제하는데 사용됨
+- select : 데이터를 조회
+- insert : 데이터를 삽입
+- update : 데이터를 수정
+- delete : 데이터를 삭제
 
 3) DCL (Data Control Language) 데이터 제어어
-- grant, revoke
+: 데이터에 대한 액세스를 제어하고 권한을 부여 또는 취소하는데 사용됨
+- grant : 사용자의 권한 부여
+- revoke : 사용자의 권한 취소
 
 4) TCL (Transaction Control Language) 트랜잭션 제어어
 - commit, rollback
