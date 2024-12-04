@@ -40,6 +40,12 @@ create database testtest
 use testtest;
 create table 학과 (학과번호 char(2), 학과명 varchar(20), 학과장명 varchar(20));
 
+insert into 학과 values
+	('AA', '컴퓨터공학과', '배경민'),
+	('BB', '소프트웨어학과', '김남준'),
+	('CC', '디자인융합과', '박선영');
+							
+
 
 
 
