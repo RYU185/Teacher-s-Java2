@@ -77,7 +77,13 @@ constraint fk_영화번호 foreign key(영화번호) references 영화(영화번
 );
 
 insert into 평점(평가자닉네임, 영화번호, 평점, 평가)
-values('Grrrr', '')
+values('Grrrr', 'MV001', 5, 'good');
+
+insert into 평점(평가자닉네임, 영화번호, 평점, 평가)
+values('Grrrr', 'MV002', 5, 'good'); -- 에러발생. MV002라는 영화번호가 영화테이블에 없음
+
+insert into 평점(평가자닉네임, 영화번호, 평점, 평가)
+values('HaHa', 'MV001', 4, 'so so');
 
 
 
