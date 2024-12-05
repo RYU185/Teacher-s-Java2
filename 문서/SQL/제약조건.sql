@@ -19,6 +19,27 @@ default : 값을 안넣으면 자동으로 기본값을 저장
 foreign key : 외래키, FK
  */
 
+create table 학과
+(학과번호 char(2) primary key,
+학과명 varchar(20) not null,
+학과장명 varchar(20));
+
+insert into 학과 values('AA', '컴퓨터공학', '김교수');
+insert into 학과 values('BB', '디자인학과', null);
+
+create table 학생
+(학번 char(5) primary key,
+이름 varchar(20) not null,
+생일 date not null,
+연락처 varchar(20) unique,
+성별 char(1) not null check(성별 in ('남', '여')),
+등록일 date default(curdate()));
+
+insert into 학생(학번, 이름, 생일, 연락처, 성별)
+values('S0001', 'Steve', '2000-01-01', '010-2222-3333', '남');
+insert into 학생(학번, 이름, 생일, 연락처, 성별)
+values('S0002', 'Tom', '2000-01-01', '010-4444-5555', '남');
+
 
 
 
