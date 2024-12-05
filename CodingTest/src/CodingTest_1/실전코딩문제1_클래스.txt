@@ -46,3 +46,17 @@ Truck(String modelName, int maxSpeed, int loadCapacity)
 메서드:
 @Override void drive() : "화물을 싣고 운전 중입니다." 출력
 @Override void performMaintenance() : "트럭 유지보수를 수행 중입니다." 출력
+
+
+## 실행결과 ##
+Model: Tesla Model S, Max Speed: 250
+도로에서 운전 중입니다.
+에어컨이 작동합니다.
+
+Model: Tesla Cybertruck, Max Speed: 180
+화물을 싣고 운전 중입니다.
+트럭 유지보수를 수행 중입니다.
+
+Model: Nissan Leaf, Max Speed: 150
+도로에서 운전 중입니다.
+배터리를 충전 중입니다.
