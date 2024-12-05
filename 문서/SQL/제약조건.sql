@@ -63,15 +63,21 @@ create table 영화
 개봉일 date,
 등록일 date default(curdate()));
 
+insert into 영화
+values('MV001', 'Diablo', '액션', 'Sam', 'Sam', '1999-09-09', curdate());
+
 create table 평점
 (번호 int auto_increment primary key,
 평가자닉네임 varchar(50) not null,
-영화번호 char(5) not null references 영화(영화번호),
+영화번호 char(5) not null,
 평점 int not null check(평점 between 1 and 5),
 평가 varchar(2000) not null,
-등록일 date default(curdate()));
+등록일 date default(curdate()),
+constraint fk_영화번호 foreign key(영화번호) references 영화(영화번호)
+);
 
-
+insert into 평점(평가자닉네임, 영화번호, 평점, 평가)
+values('Grrrr', '')
 
 
 
