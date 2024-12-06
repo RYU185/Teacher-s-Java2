@@ -5,6 +5,11 @@ select 이름, 직위
 from 사원
 where 부서번호 = (select 부서번호 from 부서 where 부서명 = '기획부');
 
+select 사원.이름, 사원.직위
+from 사원
+join 부서 on 사원.부서번호 = 부서.부서번호
+where 부서.부서명 = '기획부';
+
 
 -- 2. 재고가 50개 미만인 제품의 제품번호, 주문번호, 주문수량 조회
 select 제품번호, 주문번호, 주문수량
@@ -17,6 +22,11 @@ select 고객번호, 고객회사명
 from 고객
 where 고객번호 not in (select 고객번호 from 주문);
 
+select 주문세부.제품번호, 주문세부.주문번호, 주문세부.주문수량
+from 주문세부
+join 제품 on 주문세부.제품번호 = 제품.제품번호
+where 제품.재고 < 50;
+
 
 -- 4. '2022-02-01'에서 3개월 내 주문이 있는 사원의 사원번호, 이름, 직위 조회
 select 사원번호, 이름, 직위
@@ -25,6 +35,10 @@ where 사원번호 in (select 사원번호 from 주문
 				where 주문일 >= adddate('2022-02-01', interval -3 month) 
 );
 
+select distinct 사원.사원번호, 사원.이름, 사원.직위
+from 사원
+join 주문 on 사원.사원번호 = 주문.사원번호
+where 주문.주문일 >= adddate('2022-02-01', interval -3 month);
 
 -- 5. 고객별 주문수를 계산하여 고객회사명, 주문수 조회
 select 고객회사명, (
@@ -32,12 +46,22 @@ select 고객회사명, (
 ) as 주문수
 from 고객;
 
+select 고객.고객회사명, count(주문.주문번호) as 주문수
+from 고객
+left join 주문 on 고객.고객번호 = 주문.고객번호
+group by 고객.고객회사명;
+
 
 -- 6. 제품명, 제품별 총주문수량을 조회
 select 제품명, (
 	select sum(주문수량) from 주문세부 where 주문세부.제품번호 = 제품.제품번호
 ) as 총주문수량
 from 제품;
+
+select 제품.제품명, sum(주문세부.주문수량) as 총주문수량
+from 제품
+left join 주문세부 on 제품.제품번호 = 주문세부.제품번호
+group by 제품.제품번호, 제품.제품명;
 
 
 -- 7. 제품테이블에 있는 제품 중 단가(주문세부 테이블)가 가장 높은 제품명
