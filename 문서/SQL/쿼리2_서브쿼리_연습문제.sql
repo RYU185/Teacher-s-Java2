@@ -16,16 +16,22 @@ select 제품번호, 주문번호, 주문수량
 from 주문세부
 where 제품번호 in (select 제품번호 from 제품 where 재고 < 50);
 
+select 주문세부.제품번호, 주문세부.주문번호, 주문세부.주문수량
+from 주문세부
+join 제품 on 주문세부.제품번호 = 제품.제품번호
+where 제품.재고 < 50;
+
 
 -- 3. 고객의 주문기록이 존재하지 않는 고객의 고객번호, 고객회사명 조회
 select 고객번호, 고객회사명
 from 고객
 where 고객번호 not in (select 고객번호 from 주문);
 
-select 주문세부.제품번호, 주문세부.주문번호, 주문세부.주문수량
-from 주문세부
-join 제품 on 주문세부.제품번호 = 제품.제품번호
-where 제품.재고 < 50;
+select 고객.고객번호, 고객회사명, 주문번호
+from 고객
+left join 주문
+on 고객.고객번호 = 주문.고객번호
+where 주문번호 is null;
 
 
 -- 4. '2022-02-01'에서 3개월 내 주문이 있는 사원의 사원번호, 이름, 직위 조회
@@ -39,6 +45,7 @@ select distinct 사원.사원번호, 사원.이름, 사원.직위
 from 사원
 join 주문 on 사원.사원번호 = 주문.사원번호
 where 주문.주문일 >= adddate('2022-02-01', interval -3 month);
+
 
 -- 5. 고객별 주문수를 계산하여 고객회사명, 주문수 조회
 select 고객회사명, (
