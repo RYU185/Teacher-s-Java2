@@ -25,9 +25,31 @@ public class MysqlJdbcExample_2 {
         }
     }
 
+    // #3. UPDATE
+    public void updateDepartment(String oldName, String newName) {
+        String query = "update 부서 set 부서명=? where 부서명=?";
+        try(Connection conn = DriverManager.getConnection(URL,USER,PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setString(1, newName);
+            pstmt.setString(2, oldName);
+            pstmt.executeUpdate();
+            System.out.println("UPDATE 성공");
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*
+    Statement 와 PreparedStatement 차이점 설명
+    1. SQL Injection 취약성 - S : 매우 취약, P : 안전
+    2. 캐싱 - S : 항상 새로운 쿼리 실행, P : 동일한 쿼리는 캐싱하여 성능향상
+    3. 가독성 - S : 코드가 복잡하면 알아보기 어려움, P : 가독성 향상
+     */
+
     public static void main(String[] args) {
         MysqlJdbcExample_2 repository = new MysqlJdbcExample_2();
-        repository.insertDepartment("A6", "총무부");
-        repository.insertDepartment("A7", "해외영업부");
+        //repository.insertDepartment("A6", "총무부");
+        //repository.insertDepartment("A7", "해외영업부");
+        repository.updateDepartment("해외영업부", "글로벌영업부");
     }
 }
