@@ -1,6 +1,9 @@
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MysqlJdbcExample {
     // #1. 데이터베이스 커넥션 정보
@@ -8,7 +11,7 @@ public class MysqlJdbcExample {
     private static final String USER = "root";
     private static final String PASSWORD = "root";
 
-    // 메서드 정의 :  모든 고객정보를 조회
+    // #2. 원하는 정보를 조회하기위한 메서드를 정의 :  "모든 고객정보를 조회"
     public List<Customer> getAllCustomers() {
         List<Customer> customers = new ArrayList<>();
         // SQL 쿼리 작성
@@ -47,8 +50,84 @@ public class MysqlJdbcExample {
         return customers;
     }
 
+    // #3. 원하는 정보를 조회하기위한 메서드를 정의 :  "모든 부서정보를 조회"
+    public List<Department> getAllDepartments() {
+        List<Department> departments = new ArrayList<>();
+        String query = "select * from 부서";
+        try (
+        Connection connection = DriverManager.getConnection(
+                URL, USER, PASSWORD);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query)){
+            while (resultSet.next()) {
+                Department department = new Department();
+                department.setDepartmentId(resultSet.getString("부서번호"));
+                department.setDepartmentName(resultSet.getString("부서명"));
+                departments.add(department);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace(); // 예외가 발생한 과정의 정보를 출력
+        }
+        return departments;
+    }
+
+    // #4. 조인쿼리를 사용하는 메서드 정의
+    // 이름, 입사일, 부서명 조회
+    // 조인테이블로 결합된 정보가 조회되므로 기존 클래스에 저장 불가
+    public void getEmployees_1() {
+        // 1) ResultSet의 정보를 그대로 사용함
+        // 따로 저장하지 않기때문에 재사용성이 좋지 않음
+        String query = "select 이름, 입사일, 부서명 from 사원 "
+                + "inner join 부서 on 사원.부서번호 = 부서.부서번호";
+        try(Connection connection = DriverManager.getConnection(
+                URL, USER, PASSWORD);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query)) {
+                while(resultSet.next()) {
+                    String name = resultSet.getString("이름");
+                    String date = resultSet.getString("입사일");
+                    String dept = resultSet.getString("부서명");
+                    System.out.println(name + " " + date + " " + dept);
+                }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getEmployees_2() {
+        // 2) Map으로 동적 데이터 처리
+        // 쿼리결과의 구조가 자바클래스와 일치하지 않고 재사용 예정이라면 
+        // 데이터를 Map구조(Key, Value)로 저장할 수 있음
+        String query = "select 이름, 입사일, 부서명 from 사원 "
+                + "inner join 부서 on 사원.부서번호 = 부서.부서번호";
+        List<Map<String, Object>> employees = new ArrayList<>();
+        try(Connection connection = DriverManager.getConnection(
+                URL, USER, PASSWORD);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query)) {
+                while(resultSet.next()) {
+                    Map<String, Object> employee = new HashMap<>();
+                    employee.put("이름", resultSet.getString("이름"));
+                    employee.put("입사일", resultSet.getString("입사일"));
+                    employee.put("부서명", resultSet.getString("부서명"));
+                    employees.add(employee);
+                }
+                for (Map<String,Object> employee : employees) {
+                    System.out.println(employee);
+                }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         MysqlJdbcExample repository = new MysqlJdbcExample();
-        List<Customer> customers = repository.getAllCustomers();
+        //List<Customer> customers = repository.getAllCustomers();
+//        List<Department> departments = repository.getAllDepartments();
+//        System.out.println(departments.size());
+//        for (Department department : departments) {
+//            System.out.println(department);
+//        }
+        repository.getEmployees_2();
     }
 }
