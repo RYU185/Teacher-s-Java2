@@ -46,10 +46,30 @@ public class MysqlJdbcExample_2 {
     3. 가독성 - S : 코드가 복잡하면 알아보기 어려움, P : 가독성 향상
      */
 
+    public void insertProduct(int productNo, String name,
+                              String unit, double price, int stock) {
+        String query = "insert into 제품(제품번호,제품명,포장단위,단가,재고) "
+                + "values (?, ?, ?, ?, ?)"; // ?자리에 매개변수를 넣을 예정
+        try(Connection conn = DriverManager.getConnection(URL,USER,PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(query)) {
+            pstmt.setInt(1, productNo);
+            pstmt.setString(2, name);
+            pstmt.setString(3, unit);
+            pstmt.setDouble(4, price);
+            pstmt.setInt(5, stock);
+            pstmt.executeUpdate();
+            System.out.println("INSERT 성공");
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         MysqlJdbcExample_2 repository = new MysqlJdbcExample_2();
         //repository.insertDepartment("A6", "총무부");
         //repository.insertDepartment("A7", "해외영업부");
-        repository.updateDepartment("해외영업부", "글로벌영업부");
+        //repository.updateDepartment("해외영업부", "글로벌영업부");
+        repository.insertProduct(93, "새우깡",
+                "500 g pkgs.", 2000.0, 100);
     }
 }
