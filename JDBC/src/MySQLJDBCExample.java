@@ -30,6 +30,7 @@ public class MysqlJdbcExample {
     }
 
     public static void main(String[] args) {
-
+        MysqlJdbcExample repository = new MysqlJdbcExample();
+        List<Customer> customers = repository.getAllCustomers();
     }
 }
