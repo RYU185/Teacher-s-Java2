@@ -120,6 +120,29 @@ public class MysqlJdbcExample {
         }
     }
 
+    // #5. 주문기록이 없는 고객의 고객번호와 고객회사명 조회
+    public void getCustomersNotOrder() {
+        String query = "select 고객번호, 고객회사명 from 고객 " +
+                "where 고객번호 not in (select 고객번호 from 주문)";
+        List<Map<String, Object>> customers = new ArrayList<>();
+        try(Connection connection = DriverManager.getConnection(
+                URL, USER, PASSWORD);
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query)) {
+            while(resultSet.next()) {
+                Map<String, Object> customer = new HashMap<>();
+                customer.put("고객번호", resultSet.getString("고객번호"));
+                customer.put("고객회사명", resultSet.getString("고객회사명"));
+                customers.add(customer);
+            }
+            for (Map<String,Object> customer : customers) {
+                System.out.println(customer);
+            }
+        }catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         MysqlJdbcExample repository = new MysqlJdbcExample();
         //List<Customer> customers = repository.getAllCustomers();
@@ -128,6 +151,6 @@ public class MysqlJdbcExample {
 //        for (Department department : departments) {
 //            System.out.println(department);
 //        }
-        repository.getEmployees_2();
+        repository.getCustomersNotOrder();
     }
 }
