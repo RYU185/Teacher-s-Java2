@@ -22,10 +22,11 @@ public class MysqlJdbcExample {
                     URL, USER, PASSWORD);
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(query)) {
-
+            System.out.println("데이터베이스 연결 성공");
         } catch (SQLException e) {
             e.printStackTrace(); // 예외가 발생한 과정의 정보를 출력
         }
+        return customers;
     }
 
     public static void main(String[] args) {
