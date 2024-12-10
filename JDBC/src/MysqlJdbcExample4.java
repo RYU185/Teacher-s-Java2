@@ -17,15 +17,20 @@ public class MysqlJdbcExample4 {
 
     // #2. 매개변수로 날짜(date)와 기간(개월수)(month)를 전달하고 해당 날짜를
     // 기준으로 개월수이내의 주문정보를 골라 아래 컬럼을 조회
-    // 예를들어, 2022-02-01 기준으로 3개월 이내의 주문정보
     // 사원번호, 이름, 직위
     public void getEmployeesWithDuration(String date, int month) {
 
     }
 
+    // #3. 매개변수로 도시를 전달하고 해당도시별 고객들에 대한 주문년도별 주문건수 조회
+    public void getNumOfOrdersByCity(String city) {
+        
+    }
+
     public static void main(String[] args) {
         MysqlJdbcExample4 repository = new MysqlJdbcExample4();
-        //repository.getProductsWithStock(4);
+        repository.getProductsWithStock(4);
         repository.getEmployeesWithDuration("2022-02-01", -3);
+        repository.getNumOfOrdersByCity("서울특별시");
     }
 }
