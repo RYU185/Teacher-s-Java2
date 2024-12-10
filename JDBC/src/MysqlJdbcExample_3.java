@@ -43,7 +43,8 @@ public class MysqlJdbcExample_3 {
     public static void main(String[] args) {
         MysqlJdbcExample_3 repository = new MysqlJdbcExample_3();
         List<Employee> objects = repository.getEmployeesByPosition("과장");
-
+        //List<Customer> objects = repository.getCustomersById("CCOPI");
+        //List<Order> objects = repository.getOrdersByOrderDate("2021-05-01");
         for (Object object : objects) {
             System.out.println(object);
         }
