@@ -7,7 +7,7 @@ class A {
         try {
             System.out.println(3/0);
         }catch (ArithmeticException e) {
-            System.out.println("클래스 A 예외 발생");
+            System.out.println("클래스 custom.A 예외 발생");
             System.out.println(e.getMessage());
         }
     }
@@ -30,7 +30,10 @@ class B {
 
 public class ExceptionThrow_1 {
     public static void main(String[] args) {
-        B b = new B();
+        A a = new A(); // 일반 예외처리 try~catch문
+        a.abc();
+
+        B b = new B(); // 예외전가 (실제 예외처리는 호출한 메서드가 함)
         b.abc();
     }
 }
