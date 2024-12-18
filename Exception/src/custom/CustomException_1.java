@@ -54,7 +54,12 @@ class B {
 }
 
 public class CustomException_1 {
-    
+    public static void main(String[] args) {
+        A a = new A(); // 예외 직접 처리의 예제
+        a.setAge(-1);
+        B b = new B(); // 예외전가의 예제
+        b.callSetAge(-1);
+    }
 }
 
 
