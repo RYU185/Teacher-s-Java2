@@ -28,17 +28,26 @@ class AA {
             System.out.println("정상적인 값 : " + score);
         }
     }
+    void caller1(int score) {
+        caller2(score);
+    }
+    void caller2(int score) {
+        checkScore(score);
+    }
 }
 
 public class CustomException_3 {
     public static void main(String[] args) {
         AA a = new AA();
         try {
-            a.checkScore(85);
-            a.checkScore(150);
-            a.checkScore(-1);
+            a.caller1(85);
+            a.caller1(150);
+            a.caller1(-1);
         }catch(MinusException | OverException e) {
             System.out.println(e.getMessage());
+            for (StackTraceElement element : e.getStackTrace()) {
+                System.out.println(element);
+            }
         }
     }
 }
